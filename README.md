@@ -51,11 +51,11 @@ Rails 5.2.3
     - アイデア投稿ページでタグの編集・追加ができる
 - コメント機能
 - SNS連携機能(投稿した内容をSNSにリンク付きでツイートできる)  
-## カタログ設計  
+### カタログ設計  
 ---  
 https://docs.google.com/spreadsheets/d/1nwZebA3X9Ebh8Tr7KbmF_GQhM9mq58KZ7rRuINe-G1I/edit#gid=0  
 
-## テーブル設計
+### テーブル設計
 ---  
 https://docs.google.com/spreadsheets/d/1nwZebA3X9Ebh8Tr7KbmF_GQhM9mq58KZ7rRuINe-G1I/edit#gid=4011921
 

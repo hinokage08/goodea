@@ -15,7 +15,7 @@
 ### バージョン  
 ---  
 Ruby 2.6.5  
-Rails 6.0.0
+Rails 5.2.3
 
 ### 機能一覧  
 ---  
@@ -73,11 +73,16 @@ https://docs.google.com/spreadsheets/d/1nwZebA3X9Ebh8Tr7KbmF_GQhM9mq58KZ7rRuINe-
 kaminari  
 acts-as-taggable-on  
 devise  
+devise-i18n  
+devise-i18n-views  
 omniauth  
 omniauth-Twitter  
-pundit  
 - 検索機能  
 ransack  
 - 画像アップロード  
-image_processing  
-actiontext  
+carrierwave  
+mini_magick  
+- タグ機能  
+acts-as-taggable-on  
+- アイデア投稿機能  
+tinymce-rails

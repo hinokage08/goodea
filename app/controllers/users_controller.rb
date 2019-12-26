@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only:[:show, :edit, :update]
-  before_action :authenticate_user!, only:[:edit, :upadate, :destory]
+  before_action :authenticate_user!, only:[:edit, :update, :destory]
 
   def show
   end
@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
 
   def update
-        if @user.update(user_params)
-            redirect_to ideas_path
-        end
+    if @user.update(user_params)
+      redirect_to user_path(@user.id)
+    end
   end
 
   def following

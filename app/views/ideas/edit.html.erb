@@ -26,10 +26,7 @@
         </div>
         <div class="idea_category">
             <p>カテゴリ</p>
-            <% Category.all.each do |category| %>
-                <%= f.check_box :category_ids, { multiple: true, checked: category[:checked], disabled: category[:disabled], include_hidden: false }, category[:id] %>
-                <label><%= category.name %></label>
-            <% end %>
+            <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
         </div>
 
         <div id ="idea_tag" class="idea_tag">

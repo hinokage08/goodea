@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do |n|
-    user = User.new(email: "test#{n}@yahoo.co.jp", name: "test#{n}", password: "testuser#{n}", profile: "よろしく")
-    user.save!
-end
+#20.times do |n|
+    #user = User.new(email: "test#{n}@yahoo.co.jp", name: "test#{n}", password: "testuser#{n}", profile: "よろしく")
+    #user.save!
+#end
 
 %W[フィギュア キーホルダー・ストラップ 缶バッジ 雑貨 アパレルアイテム アクセサリー コスメ関連 文具デスク用品 その他].each { |sample| Category.create(name: sample) }
 

@@ -15,3 +15,5 @@ end
     idea = Idea.new(title: "鬼滅の刃のアクセサリー", content: "testest#{n}", category_ids: ["1"], tag_list: "鬼滅の刃", user_id: User.first.id + n)
     idea.save!
 end
+
+%W[フィギュア キーホルダー・ストラップ 缶バッジ 雑貨 アパレルアイテム アクセサリー コスメ関連 文具デスク用品 その他].each { |sample| Category.create(name: sample) }

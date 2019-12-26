@@ -1,3 +1,26 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'relationships/create'
+  get 'relationships/destroy'
+  devise_for :users, controllers: { 
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'}
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  
+  resources :ideas do
+    collection do
+      get :top, :my_idea
+    end
+    resources :comments, only: [:create, :destroy]
+  end
+
+  resources :favorites, only: [:create, :destroy]
+
+  resources :relationships, only: [:create, :destroy]
+
+  resources :categories, only: [:show]
+  root to: "ideas#top"
 end

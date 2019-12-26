@@ -1,0 +1,26 @@
+<div class="my_account_container">
+  <div class="my_account_image">
+    <% if @user.profile_image? %>
+      <%= image_tag(current_user.profile_image.url, size: "100x100") if current_user.profile_image && current_user.profile_image.url %>
+    <% else %>
+      <%= image_tag(@user.image, size: "100x100") if current_user.image %>
+    <% end %>
+  </div>
+  <div class="my_account_title_container">
+    <%= current_user.name%>
+  </div>
+</div>
+<div class="follow_container">
+  <div class="follow_title_container">
+    フォロワー
+  </div>
+  <div class="follow_user_container">
+  <% @user.following.each do |user| %>
+  <table>
+  <tr>
+    <td> <%= user.name %> </td>
+    <td><%= link_to '詳細', user_path(user) %></td>
+  </tr>
+  </table>
+  <% end %>
+</div>

@@ -1,0 +1,65 @@
+<div class="index_container">
+<div class="title_container">
+    新着アイデア
+</div>
+<div class="new_article_container">
+    <% @ideas.last(9).each do |idea| %>
+        <div class="article">
+            <div class="article_tag">
+                <%= idea.tag_list.first%>
+            </div>
+            <div class="article_image">
+                <%= link_to idea_path(idea.id) do %>
+                    <% if idea.image && idea.image.url %>
+                            <%= image_tag(idea.image.url, size: "200x200") %>
+                    <% else %>
+                        <%= image_tag("noimage.png", size: "200x200") %>
+                    <% end %>
+                <%end%>
+            </div>
+            <div class="article_title">
+                <%= idea.title %>
+            </div>
+        </div>
+        <%#= link_to "削除", idea_path(idea.id), method: :delete ,data:{ confirm: '本当に削除してもよろしいですか？'} %>
+    <% end %>
+</div>
+<div class="title_container">
+    グッズカテゴリ
+</div>
+<div class="category_container">
+    <table>
+        <% @category.each do |category| %>
+        <div class="one_category">
+                <%= link_to category_path(category.id) do %>
+                    <%= category.name %>
+                <% end %>
+        </div>
+<% end %>
+</table>
+</div>
+
+<%= link_to "新規作成", new_idea_path%>
+</div>
+<div class="rank_container">
+    <div class="rank_title_container">
+        ランキング(いいね数)
+    </div>
+        <% @all_ranks.each.with_index(1) do |idea, i| %>
+        <div class="rank_article">
+            <div class="rank_article_image">
+                <%= link_to idea_path(idea.id) do %>
+                    <% if idea.image && idea.image.url %>
+                            <%= image_tag(idea.image.url, size: "80x80") %>
+                    <% else %>
+                        <%= image_tag("noimage.png", size: "80x80") %>
+                    <% end %>
+                <%end%>
+                <div class="rank_article_title">
+                    <%= idea.title.truncate(15)%>
+                    <p>@<%= idea.user.name.truncate(10)%></p>
+                </div>
+            </div>
+        </div>
+        <% end %>
+</div>

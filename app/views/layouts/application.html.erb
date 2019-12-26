@@ -9,7 +9,56 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-turbolinks="false">
+    <header>
+      <div class="header_container">
+        <div class="left_container">
+          <div class="logo_image">
+            <%= link_to image_tag('logo.png', class:'logo_image'),top_ideas_path %>
+          </div>
+          <div class="main_link_container">
+            <% if user_signed_in? %>
+              <div class="idea_create">
+                <%= link_to 'アイデア投稿', new_idea_path %>
+              </div>
+                |
+              <div class="idea_management">
+                <%= link_to 'アイデア管理', my_idea_ideas_path(current_user.id) %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="right_container">
+          <div class="search_container">
+            <dl class="searchbox">
+              <%= search_form_for @search, url: ideas_path do |f| %>
+                <dt><%= f.text_field :tags_name_cont ,placeholder: '検索するテキストを入力...' %></dt>
+                <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
+              <% end %>
+            </dl>
+          </div>
+          <div class="user_container">
+            <% if user_signed_in? %>
+              <%= link_to user_path(current_user.id) do %>
+                <% if current_user.profile_image? %>
+                  <%= image_tag(current_user.profile_image.url, size: "50x50") if current_user.profile_image && current_user.profile_image.url %>
+                <% else %>
+                  <%= image_tag(current_user.image, size: "50x50") if current_user.image %>
+                <% end %>
+                <% end %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <% else %>
+            <%= link_to "新規作成", new_user_registration_path %>
+            <%= link_to "ログイン", new_user_session_path %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+    </header>
+         <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <div class="body_container">
     <%= yield %>
+    </div>
   </body>
 </html>

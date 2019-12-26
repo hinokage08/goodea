@@ -1,0 +1,54 @@
+<div class="mypage_container">
+<div class="mypage_title_container">
+マイページ
+</div>
+    <div class="icon_name_container">
+        <div class="mypage_icon">
+            <% if @user.profile_image? %>
+                <%= image_tag(current_user.profile_image.url, size: "100x100") if current_user.profile_image && current_user.profile_image.url %>
+            <% elsif @user.image? %>
+                <%= image_tag(@user.image, size: "100x100") if current_user.image %>
+            <% else %>
+                <%= image_tag("noimage.png", size: "100x100") %>
+            <% end %>
+        </div>
+        <div class="mypage_name">
+            <%= @user.name %>
+        </div>
+        <% if current_user == @user%>
+            <p><%= render 'follow_form', user: @user %></p>
+            <section class="stats">
+                <%= render 'users/stats' %>
+            </section>
+            <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
+        <% end %>
+    </div>
+    <div class="profile">
+        <%= @user.profile%>
+    </div>
+    <div class="mypage_title_container">
+        <%= link_to "投稿したアイデア一覧", my_idea_ideas_path%>
+    </div>
+    <div class="mypage_article_container">
+    <% @user.ideas.each do |idea| %>
+        <div class="article">
+            <div class="article_tag">
+                <%= idea.tag_list.first%>
+            </div>
+            <div class="article_image">
+                <%= link_to idea_path(idea.id) do %>
+                    <% if idea.image && idea.image.url %>
+                            <%= image_tag(idea.image.url, size: "200x200") %>
+                    <% else %>
+                        <%= image_tag("noimage.png", size: "200x200") %>
+                    <% end %>
+                <%end%>
+            </div>
+            <div class="article_title">
+                <%= idea.title %>
+            </div>
+        </div>
+        <%#= link_to "削除", idea_path(idea.id), method: :delete ,data:{ confirm: '本当に削除してもよろしいですか？'} %>
+    <% end %>
+</div>
+</div>

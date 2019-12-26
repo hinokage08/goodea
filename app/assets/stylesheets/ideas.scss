@@ -1,0 +1,189 @@
+// Place all the styles related to the ideas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//top
+.category_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.one_category {
+    width: 200px;
+    height: 50px;
+    margin: 2em 0;
+    background: #e9ebee;
+    color: #5d627b;
+}
+
+
+.rank_container {
+    width: 200px;
+    height: 700px;
+    margin: 2em 0;
+    background: white;
+    border-top: solid 5px #5d627b;
+}
+
+.rank_title_container {
+    width: 190px;
+    text-align: left;
+    font-weight:bolder;
+    margin: 1em 5px;
+    border: solid 1px;
+    color: #5d627b;
+    background: #e9ebee;
+}
+
+.rank_article {
+    width: 200px;
+    height: 150px;
+}
+
+.rank_article_image {
+    margin: 2em 0 0 20px;
+    height: 80px;
+    display: flex;
+}
+
+.rank_article_title {
+    width: 100px;
+    height: 150px;
+}
+
+//new
+.new_container {
+    text-align: center;
+    width: 800px;
+}
+
+.idea_title input[type="text"] {
+    width: 800px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 2em 0 1em 0;
+    font-size: 16px;
+}
+
+#img_field.idea_image {
+    font-size: 15px;
+    margin-top: 10px;
+    border: solid 1px #EDBC6C;
+    color: #666;
+    padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 250px;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: 0.3s ease-out;
+    text-align: center;
+    display:inline-block;
+}
+
+#img_field i {
+    font-size: 100px;
+    color: #aaa;
+    line-height: 250px;
+    transition: 0.3s ease-out;
+}
+
+#img_field i.add {
+    display: none;
+    font-size: 50px;
+    top: -90px;
+    right: 15px;
+}
+
+#img_field:hover {
+    background-color: #EDBC6C;
+    transition: 0.3s ease-out;
+    opacity: 0.9;
+}
+
+#img_field:hover i {
+    transition: 0.3s ease-out;
+    color: #fff;
+}
+
+
+.idea_category {
+    width: 720px;
+    background: white;
+    text-align: center;
+    margin: 2em 0 1em 40px;
+    border-radius: 5px;
+}
+
+#idea_tag.idea_tag {
+    margin: 2em 0 ;
+    text-align: center;
+}
+
+.idea_tag input[type="text"]{
+    width: 700px;
+}
+
+.submit {
+    text-align: center;
+}
+
+
+//show
+.show_container {
+    width: 1000px;
+    margin: 2em 0;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.show_user_container{
+    width: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit_link {
+    text-align: right;
+}
+
+.show_image_container {
+    width: 990px;
+    max-height: 600px;
+    margin: 2em 0;
+    text-align: center;
+}
+
+.show_title_container {
+    width: 990px;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight:bolder;
+    margin: 1em 5px;
+}
+
+.content_container {
+    width: 800px;
+    min-height: 300px;
+    margin: 1em 100px;
+}
+
+.comments_container {
+    width: 800px;
+    margin: 1em 100px;
+}
+
+textarea {
+    width: 800px;
+}

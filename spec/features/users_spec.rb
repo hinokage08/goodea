@@ -52,11 +52,4 @@ RSpec.feature "ユーザー機能", type: :feature do
         visit user_path(@user1.id)
         expect(page).to have_content "プロフィール編集"
     end
-
-    scenario "マイページで自分が投稿したアイデアが表示されるかのテスト" do
-        log_in(@user1)
-        visit user_path(@user1.id)
-        expect(page).to have_content "test_01"
-    end
-
 end

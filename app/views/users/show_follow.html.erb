@@ -12,15 +12,27 @@
 </div>
 <div class="follow_container">
   <div class="follow_title_container">
-    フォロワー
+    フォロー
   </div>
-  <div class="follow_user_container">
   <% @user.following.each do |user| %>
-  <table>
-  <tr>
-    <td> <%= user.name %> </td>
-    <td><%= link_to '詳細', user_path(user) %></td>
-  </tr>
-  </table>
+    <div class="follow_user_container">
+      <div class="follow_user_image">
+        <% if user.profile_image? %>
+          <%= image_tag(user.profile_image.url, size: "100x100") if user.profile_image && user.profile_image.url %>
+        <% elsif user.image? %>
+          <%= image_tag(user.image, size: "100x100") if user.image %>
+        <% else %>
+          <%= image_tag("noimage.png", size: "100x100")%>
+        <% end %>
+      </div>
+      <div class="follow_user_name_profile_container">
+        <p><%= user.name.truncate(10)%></p>
+        <% if user.profile? %>
+          <%= user.profile.truncate(15) %>
+        <% else %>
+          <%= user.profile %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>

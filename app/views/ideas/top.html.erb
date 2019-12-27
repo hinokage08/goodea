@@ -48,9 +48,9 @@
             <div class="rank_article_image">
                 <%= link_to idea_path(idea.id) do %>
                     <% if idea.image && idea.image.url %>
-                            <%= image_tag(idea.image.url, size: "80x80") %>
+                            <%= image_tag(idea.image.url, size: "80x80", id: "rank") %>
                     <% else %>
-                        <%= image_tag("noimage.png", size: "80x80") %>
+                        <%= image_tag("noimage.png", size: "80x80", id: "rank")%>
                     <% end %>
                 <%end%>
                 <div class="rank_article_title">

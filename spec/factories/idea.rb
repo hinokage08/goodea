@@ -14,6 +14,15 @@ FactoryBot.define do
         created_at { Time.current + 2.day }
         category_ids { "2" }
         tag_list { 'ラブライブ' }
+        user { User.second }
+    end
+
+    factory :third_idea, class: Idea do
+        title { 'test_03' }
+        content { 'testtest_03' }
+        created_at { Time.current + 3.day }
+        category_ids { "3" }
+        tag_list { '進撃の巨人' }
         user { User.first }
     end
 end

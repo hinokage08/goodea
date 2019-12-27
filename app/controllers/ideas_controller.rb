@@ -1,6 +1,7 @@
 class IdeasController < ApplicationController
     before_action :set_idea, only:[:show, :edit, :update, :destroy]
     before_action :authenticate_user!, only:[:new, :create, :edit, :upadate, :destory, :my_idea]
+    before_action :check_user, only: [:edit, :update, :delete]
     def index
         @ideas = Idea.all
     end
@@ -56,5 +57,12 @@ class IdeasController < ApplicationController
     
     def idea_params
         params.require(:idea).permit(:title, :content, :image, :image_cache, :tag_list, category_ids: [])
+    end
+
+    def check_user
+        @user = User.find(params[:id])
+        if @idea.user_id != current_user.id
+            redirect_to top_ideas_path,notice:"権限がありません"
+        end
     end
 end

@@ -13,7 +13,7 @@
         <% else %>
             <%= image_tag("noimage.png", size: "80x80") %>
         <% end %>
-        <%= link_to @idea.user.name, edit_idea_path(@idea.id)%>
+        <p><%= @idea.user.name %></p>
     <%end%>
     </div>
     <div class="show_title_container">

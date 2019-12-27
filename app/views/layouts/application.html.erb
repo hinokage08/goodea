@@ -18,6 +18,10 @@
           </div>
           <div class="main_link_container">
             <% if user_signed_in? %>
+              <div class="idea_management">
+                <%= link_to 'アイデア一覧', ideas_path %>
+              </div>
+                |
               <div class="idea_create">
                 <%= link_to 'アイデア投稿', new_idea_path %>
               </div>
@@ -36,7 +40,7 @@
           <div class="search_container">
             <dl class="searchbox">
               <%= search_form_for @search, url: ideas_path do |f| %>
-                <dt><%= f.text_field :tags_name_cont ,placeholder: '検索するテキストを入力...', id: "search-btn"%></dt>
+                <dt><%= f.text_field :tags_name_cont ,placeholder: '検索するタグ名を入力', id: "search-btn"%></dt>
                 <dd><%= f.submit ("検索") , class: 'search-btn' %></dd>
               <% end %>
             </dl>

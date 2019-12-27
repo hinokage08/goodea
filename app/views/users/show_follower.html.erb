@@ -17,10 +17,12 @@
   <% @user.followers.each do |user| %>
     <div class="follow_user_container">
       <div class="follow_user_image">
+      <%= link_to user_path(user.id) do %>
         <% if user.profile_image? %>
           <%= image_tag(user.profile_image.url, size: "100x100") if user.profile_image && user.profile_image.url %>
         <% else %>
           <%= image_tag(user.image, size: "100x100") if user.image %>
+        <% end %>
         <% end %>
       </div>
       <div class="follow_user_name_profile_container">

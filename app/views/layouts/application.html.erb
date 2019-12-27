@@ -33,6 +33,10 @@
               <div class="idea_management">
                 <%= link_to 'トップページ', top_ideas_path %>
               </div>
+                |
+              <div class="idea_management">
+                <%= link_to 'マイページ', user_path(current_user.id) %>
+              </div>
             <% end %>
           </div>
         </div>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     collection do
       get :top, :my_idea
     end
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
   resources :favorites, only: [:create, :destroy]

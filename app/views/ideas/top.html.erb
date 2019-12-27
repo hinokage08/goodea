@@ -3,7 +3,7 @@
     新着アイデア
 </div>
 <div class="new_article_container">
-    <% @ideas.last(9).each do |idea| %>
+    <% @ideas.each do |idea| %>
         <div class="article">
             <div class="article_tag">
                 <%= idea.tag_list.first%>

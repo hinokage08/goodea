@@ -39,7 +39,7 @@ class IdeasController < ApplicationController
     end
 
     def top
-        @ideas = Idea.all
+        @ideas = Idea.all.order(id: "DESC").first(9)
         @category = Category.all
         @all_ranks = Idea.find(Favorite.group(:idea_id).order('count(idea_id) desc').limit(3).pluck(:idea_id))
     end

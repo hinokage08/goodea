@@ -9,7 +9,6 @@ class Idea < ApplicationRecord
 
     validates :title, presence: true, length: { maximum:20 }
     validates :content, presence: true
-    validates :category_ids, presence: true
     validate  :tag_list_tag_validation
     def tag_list_tag_validation
         tag_validation = tag_list 

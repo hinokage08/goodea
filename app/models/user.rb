@@ -47,6 +47,10 @@ class User < ApplicationRecord
         def unfollow!(other_user)
           active_relationships.find_by(followed_id: other_user.id).destroy
         end
+
+        def password_required?
+          super && provider.blank?
+        end
       
         private
       

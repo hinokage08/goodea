@@ -17,7 +17,7 @@
 //= require bootstrap-tagsinput.min
 //= require turbolinks
 //= require jquery/dist/jquery.js
-//= require tinymce
+//= require tinymce-jquery
 //= require_tree .
 
 $(function(){

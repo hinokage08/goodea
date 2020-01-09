@@ -7,3 +7,4 @@ plugins:
   - image
 toolbar:
   - undo redo | formatselect | fontselect | fontsizeselect | bold | italic | underline | alignleft | aligncenter | alignjustify | alignright 
+language: "ja"

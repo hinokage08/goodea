@@ -11,10 +11,10 @@ module TinyMCE::Rails
     # Set default installation method (:compile or :copy) for TinyMCE assets
     #   :compile - adds TinyMCE to the Sprockets load paths and creates non-digested symlinks to the digested versions
     #   :copy    - copies across the TinyMCE assets statically
-    config.tinymce.install = :compile
+    config.tinymce.install = :copy
 
     initializer "precompile", :group => :all do |app|
-      app.config.assets.precompile << "tinymce/*" if config.tinymce.install == :compile
+      app.config.assets.precompile << "tinymce/*" if config.tinymce.install == :copy
       app.config.assets.precompile << "tinymce.js"
     end
 

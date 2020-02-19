@@ -23,6 +23,7 @@
         </div>
         <div class="idea_content" >
             <%= f.text_area :content, placeholder: "アイデア内容", class: "tinymce" %>
+            <%= tinymce language: "ja", plugins: ["wordcount", "paste"] %>
         </div>
         <div class="idea_category">
             <p>カテゴリ</p>
@@ -38,5 +39,4 @@
 
         <%= f.submit "投稿する"%>
         <%end%>
-        <%= tinymce language: "ja", plugins: ["wordcount", "paste"] %>
     </div>

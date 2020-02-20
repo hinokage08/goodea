@@ -82,4 +82,4 @@ production:
   <<: *default
   database: goodea!_production
   username: goodea!
-  password: <%= ENV['GOODEA!_DATABASE_PASSWORD'] %>
+  password: <%= ENV['GOODEA!_DATABASE_PASSWORD'] %> 

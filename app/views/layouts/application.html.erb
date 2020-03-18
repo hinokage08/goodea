@@ -6,7 +6,9 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <%= tinymce_assets %>
     <script type="text/javascript">
       tinyMCE.init({
@@ -25,23 +27,19 @@
           </div>
           <div class="main_link_container">
             <% if user_signed_in? %>
-              <div class="idea_management">
+              <div class="header_link">
                 <%= link_to 'アイデア一覧', ideas_path %>
               </div>
-                |
-              <div class="idea_create">
+              <div class="header_link">
                 <%= link_to 'アイデア投稿', new_idea_path %>
               </div>
-                |
-              <div class="idea_management">
+              <div class="header_link">
                 <%= link_to 'アイデア管理', my_idea_ideas_path(current_user.id) %>
               </div>
-                |
-              <div class="idea_management">
+              <div class="header_link">
                 <%= link_to 'トップページ', top_ideas_path %>
               </div>
-                |
-              <div class="idea_management">
+              <div class="header_link">
                 <%= link_to 'マイページ', user_path(current_user.id) %>
               </div>
             <% end %>

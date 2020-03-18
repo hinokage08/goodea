@@ -84,3 +84,7 @@ gem 'rails-i18n'
 gem 'tinymce-rails-langs'
 gem 'fog-aws'
 gem 'dotenv-rails'
+gem 'graphql'
+gem 'graphiql-rails'
+#gem 'graphiql-rails', group: :development
+gem 'rack-cors'

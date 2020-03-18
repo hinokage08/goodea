@@ -8,6 +8,15 @@ Bundler.require(*Rails.groups)
 
 module Goodea
   class Application < Rails::Application
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*',
+        headers: :any, 
+        methods: [:get, :post, :options, :head]
+      end
+    end
+    config.serve_static_assets = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.i18n.default_locale = :ja

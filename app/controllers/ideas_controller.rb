@@ -60,7 +60,6 @@ class IdeasController < ApplicationController
     end
 
     def check_user
-        @user = User.find(params[:id])
         if @idea.user_id != current_user.id
             redirect_to top_ideas_path,notice:"権限がありません"
         end

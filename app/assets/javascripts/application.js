@@ -41,4 +41,13 @@ $(function(){
       })(file);
       reader.readAsDataURL(file);
     });
+
+
+    $('.slide').slick({
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 9000,
+      speed: 2000,
+      slidesToShow: 3,
+  })
   });

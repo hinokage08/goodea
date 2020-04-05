@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       method: 'post',
       headers: JSON.parse(graphiqlContainer.dataset.headers),
       body: JSON.stringify(graphQLParams),
-      credentials: 'include',
+      credentials: 'same-origin',
     }).then(function(response) {
       try {
         return response.json();

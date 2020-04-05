@@ -1,1 +1,1 @@
-GraphiQL::Rails.config.headers["Authorization"] = -> (context) { "bearer #{context.cookies['_pztpeEANhMf6mjT4ZTDOOdVbQiyAfLLELaiULX4ZipE']}" }
+GraphiQL::Rails.config.headers["Authorization"] = -> (context) { "bearer pztpeEANhMf6mjT4ZTDOOdVbQiyAfLLELaiULX4ZipE" }

@@ -10,10 +10,11 @@ module Goodea
   class Application < Rails::Application
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
+        origins 'api.annict.com','localhost:3000'
         resource '*',
         headers: :any, 
-        methods: [:get, :post, :options, :head]
+        methods: [:get, :post, :options, :head],
+        credentials: true
       end
     end
     config.serve_static_assets = false

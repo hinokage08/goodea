@@ -85,7 +85,6 @@ gem 'tinymce-rails-langs'
 gem 'fog-aws'
 gem 'dotenv-rails'
 gem 'graphql',"1.2.2"
-gem 'graphiql-rails'
 gem 'twitter'
 gem 'graphql-client', "0.2.3"
 gem 'pry-rails'

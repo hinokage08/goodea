@@ -21,10 +21,6 @@ class Idea < ApplicationRecord
             errors.add(:tag_list, "タグは５個までです")
         end
     end
-
-
-
-
     acts_as_taggable_on :labels
     acts_as_taggable
-end
+  end

@@ -17,8 +17,8 @@
  *= require tagit.ui-zendesk
  *= require_self
  */
-
-
+@import "slick-theme"; 
+@import "slick";
 body {
   width: 100%;
   margin: 0 auto;
@@ -78,18 +78,38 @@ header {
 
 .body_container {
   width: 100%;
+}
+
+.trend_container {
+  width: 800px;
+  height: 170px;
+  margin: 0 auto;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.trend_image img{
+  width: 50%;
+  height: auto;
+}
+
+.main_container {
+  width: 100%;
   display: flex;
-  justify-content: center;
 }
 
 .index_container {
   width: 800px;
-    margin: 2em 3em;
-    color: #5d627b;
-    background: white;
-    border-top: solid 5px #5d627b;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-    border-radius: 10px;
+  margin: 2em 3em;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
 }
 
 .title_container  {

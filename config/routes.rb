@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "https://api.annict.com/graphql"
-  end
-  post "/graphql", to: "graphql#execute"
+  require 'sidekiq/web'
+  require 'sidekiq-scheduler/web'
+  mount Sidekiq::Web => '/sidekiq'
   get 'relationships/create'
   get 'relationships/destroy'
   devise_for :users, controllers: { 

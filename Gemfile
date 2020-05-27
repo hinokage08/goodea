@@ -84,7 +84,18 @@ gem 'rails-i18n'
 gem 'tinymce-rails-langs'
 gem 'fog-aws'
 gem 'dotenv-rails'
-gem 'graphql'
+gem 'graphql',"1.2.2"
 gem 'graphiql-rails'
-#gem 'graphiql-rails', group: :development
-gem 'rack-cors'
+gem 'twitter'
+gem 'graphql-client', "0.2.3"
+gem 'pry-rails'
+gem 'wikipedia-client'
+gem 'natto'
+gem 'yahoo_keyphrase_api', '~> 0.1.1'
+gem 'google-api-client', '~> 0.34'
+gem 'imgkit'
+gem 'whenever'
+gem 'sidekiq'
+gem 'redis-namespace'
+gem 'sidekiq-scheduler'
+gem 'sinatra', require: false

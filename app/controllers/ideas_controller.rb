@@ -2,6 +2,7 @@ class IdeasController < ApplicationController
     before_action :set_idea, only:[:show, :edit, :update, :destroy]
     before_action :authenticate_user!, only:[:new, :create, :edit, :upadate, :destory, :my_idea]
     before_action :check_user, only: [:edit, :update, :delete]
+  
     def index
         @ideas = Idea.all
     end
@@ -45,6 +46,7 @@ class IdeasController < ApplicationController
         @all_ranks = Idea.find(Favorite.group(:idea_id).order('count(idea_id) desc').limit(3).pluck(:idea_id))
     end
 
+    
     def my_idea
         @ideas = current_user.ideas.all
     end

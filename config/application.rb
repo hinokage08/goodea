@@ -27,7 +27,7 @@ module Goodea
 
   HTTPAdapter = GraphQL::Client::HTTP.new("https://api.annict.com/graphql") do
     def headers(context)
-      { "Authorization": ENV['ANNICT_KEY'] }
+      { "Authorization": Bearer pztpeEANhMf6mjT4ZTDOOdVbQiyAfLLELaiULX4ZipE}
     end
   end  
   

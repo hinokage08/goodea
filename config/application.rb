@@ -25,9 +25,10 @@ module Goodea
     config.active_job.queue_adapter = :sidekiq
   end
 
+  AUTH_HEADER = ENV['ANNICT_KEY']
   HTTPAdapter = GraphQL::Client::HTTP.new("https://api.annict.com/graphql") do
     def headers(context)
-      { "Authorization": "Bearer pztpeEANhMf6mjT4ZTDOOdVbQiyAfLLELaiULX4ZipE"}
+      { "Authorization": AUTH_HEADER }
     end
   end  
   

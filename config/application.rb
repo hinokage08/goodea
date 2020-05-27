@@ -4,7 +4,6 @@ require 'rails/all'
 require 'graphql/client'
 require 'graphql/client/http'
 require 'wikipedia'
-require 'yahoo_keyphrase_api'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

@@ -3,8 +3,10 @@
     Twitterで話題の作品
   </div>
   <div class="trend_image slide">
-  <% @ideas.each do |n|%>
-
+  <% @trends.each do |trend|%>
+    <% unless trend.anime_url.blank?%>
+      <%= image_tag(trend.anime_url)%>
+    <% end %>
   <% end %>
   </div>
 </div>

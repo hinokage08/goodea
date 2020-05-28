@@ -71,11 +71,13 @@ class Trend < ApplicationRecord
     query = related_word + "_正式名称_wikipedia"
     results = searcher.list_cses(q: query , cx: ENV['GOOGLE_CSE_ID'], lr: "lang_ja")
     items = results.items.map(&:formatted_url)
-    items.each do |item|
+    items.each_with_index do |item, idx|
       if item.index("wikipedia")
         unless item == "https://ja.wikipedia.org/wiki/ウィキペディア"
           return item.delete("https://ja.wikipedia.org/wiki/").strip
           end
+      elsif idx == items.size - 1
+        return nil
       end
     end
   end
@@ -90,10 +92,10 @@ class Trend < ApplicationRecord
             break
           end
         end
-        if idx == edges.size - 1
+      elsif idx == edges.size - 1
           return "noimage.png"
-        end
       end
+    end
     end
   end
 end

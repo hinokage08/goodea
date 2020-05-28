@@ -75,7 +75,7 @@ class Trend < ApplicationRecord
       if item.index("wikipedia")
         unless item == "https://ja.wikipedia.org/wiki/ウィキペディア"
           return item.delete("https://ja.wikipedia.org/wiki/").strip
-          end
+        end
       elsif idx == items.size - 1
         return nil
       end
@@ -95,7 +95,6 @@ class Trend < ApplicationRecord
       elsif idx == edges.size - 1
           return "noimage.png"
       end
-    end
     end
   end
 end

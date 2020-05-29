@@ -1,42 +1,48 @@
-<%= form_with(model: @idea, local: true) do |f| %>
+<div class="new_container">
+  <%= form_with(model: @idea, local: true) do |f| %>
     <% if @idea.errors.any? %>
     <div id="error_explanation">
-        <h2><%= @idea.errors.count %>件のエラーがあります。</h2>
-        <ul>
-        <% @idea.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <h2><%= @idea.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @idea.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
     <% end %>
     </ul>
     </div>
-    <% end %>
-    <div class="new_container">
+  <% end %>
+      <div class="image_container">
         <div id="img_field" onClick="$('#file').click()" class="idea_image" >
-            <% if @idea.image.url.present? %>
-                <%= image_tag(@idea.image.url) %>
-            <% else %>
-                <i class="fas fa-image">画像</i><i class="fas fa-file-upload add"></i>
-            <% end %>
+          <% if @idea.image.url.present? %>
+            <%= image_tag(@idea.image.url) %>
+          <% else %>
+            <i class="fas fa-image">
+              <%= image_tag("picture.png") %>
+            </i><i class="fas fa-file-upload add"></i>
+          <% end %>
         </div>
-            <%= f.file_field :image, class: "image", style: "display:none;", id: "file"%>
+        <%= f.file_field :image, class: "image", style: "display:none;", id: "file"%>
+      </div>
+      <div class="input_container">
         <div class="idea_title">
-            <%= f.text_field :title, placeholder: "タイトル(20文字以内)", id: "title"%>
+          <%= f.text_field :title, placeholder: "タイトル(20文字以内)", id: "title"%>
         </div>
         <div class="idea_content" >
-            <%= f.text_area :content, placeholder: "アイデア内容", class: "tinymce" %>
-            <%= tinymce %>
+          <%= f.text_area :content, placeholder: "アイデア内容", class: "tinymce" %>
+          <%= tinymce %>
         </div>
         <div class="idea_category">
-            <p>カテゴリ</p>
-            <% Category.all.each do |category| %>
-                <%= f.check_box :category_ids, { multiple: true, checked: category[:checked], disabled: category[:disabled], include_hidden: false }, category[:id], id: "category" %>
-                <label><%= category.name %></label>
-            <% end %>
+          <p>カテゴリ</p>
+          <% Category.all.each do |category| %>
+            <%= f.check_box :category_ids, { multiple: true, checked: category[:checked], disabled: category[:disabled], include_hidden: false }, category[:id], id: "category" %>
+            <label><%= category.name %></label>
+          <% end %>
         </div>
 
         <div id ="idea_tag" class="idea_tag">
-            <%= text_field_tag 'idea[tag_list]', @idea.tag_list.join(','), "data-role" => "tagsinput", placeholder: "タグをカンマ区切りで入力", id: "idea_tag" %>
+          <%= text_field_tag 'idea[tag_list]', @idea.tag_list.join(','), "data-role" => "tagsinput", placeholder: "タグをカンマ区切りで入力", id: "idea_tag" %>
         </div>
 
         <%= f.submit "投稿する"%>
         <%end%>
-    </div>
+      </div>
+</div>

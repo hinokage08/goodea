@@ -1,34 +1,34 @@
-<div class="trend_container">
-  <div class="trend_title">
-    Twitterで話題の作品
-  </div>
-  <div class="trend_image slide">
-  <% @trends.each do |trend|%>
-    <% unless trend.anime_url.blank?%>
-      <%= image_tag(trend.anime_url)%>
+  <div class="trend_container">
+    <div class="trend_title">
+      Twitterで話題の作品
+    </div>
+    <div class="trend_image slide">
+    <% @trends.each do |trend|%>
+      <% unless trend.anime_url.blank?%>
+        <%= image_tag(trend.anime_url)%>
+      <% end %>
     <% end %>
-  <% end %>
+    </div>
   </div>
-</div>
-<div class="main_container">
-  <div class="category_container">
+  <div class="main_container">
+    <div class="category_container">
       <div class="category_title_container">
-          グッズカテゴリー
+        グッズカテゴリー
       </div>
       <div class="category_list">
-          <% @category.each do |category| %>
-                  <%= link_to category_path(category.id) do %>
-                      <ul>><%= category.name %></ul>
-                  <% end %>
+        <% @category.each do |category| %>
+          <%= link_to category_path(category.id) do %>
+            <ul>><%= category.name %></ul>
           <% end %>
+        <% end %>
       </div>
-  </div>
+    </div>
 
-  <div class="index_container">
-  <div class="title_container">
-      新着アイデア
-  </div>
-  <div class="new_article_container slide">
+    <div class="index_container">
+    <div class="title_container">
+        新着アイデア
+    </div>
+    <div class="new_article_container slide">
       <% @ideas.each do |idea| %>
           <div class="article">
               <div class="article_tag">
@@ -49,28 +49,28 @@
           </div>
           <%#= link_to "削除", idea_path(idea.id), method: :delete ,data:{ confirm: '本当に削除してもよろしいですか？'} %>
       <% end %>
-  </div>
-  </div>
-  <div class="rank_container">
+    </div>
+    </div>
+    <div class="rank_container">
       <div class="rank_title_container">
           ランキング(いいね数)
       </div>
-          <% @all_ranks.each.with_index(1) do |idea, i| %>
-          <div class="rank_article">
-              <div class="rank_article_image">
-                  <%= link_to idea_path(idea.id) do %>
-                      <% if idea.image && idea.image.url %>
-                              <%= image_tag(idea.image.url, size: "80x80", id: "rank") %>
-                      <% else %>
-                          <%= image_tag("noimage.png", size: "80x80", id: "rank")%>
-                      <% end %>
-                  <%end%>
-                  <div class="rank_article_title">
-                      <%= idea.title.truncate(15)%>
-                      <p>@<%= idea.user.name.truncate(10)%></p>
-                  </div>
-              </div>
+      <% @all_ranks.each.with_index(1) do |idea, i| %>
+      <div class="rank_article">
+        <div class="rank_article_image">
+          <%= link_to idea_path(idea.id) do %>
+            <% if idea.image && idea.image.url %>
+                    <%= image_tag(idea.image.url, size: "80x80", id: "rank") %>
+            <% else %>
+                <%= image_tag("noimage.png", size: "80x80", id: "rank")%>
+            <% end %>
+          <%end%>
+          <div class="rank_article_title">
+            <%= idea.title.truncate(15)%>
+            <p>@<%= idea.user.name.truncate(10)%></p>
           </div>
-          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
-</div>

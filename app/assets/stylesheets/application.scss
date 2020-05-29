@@ -78,6 +78,9 @@ header {
 
 .body_container {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .trend_container {
@@ -100,6 +103,7 @@ header {
 .main_container {
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 
 .index_container {
@@ -110,6 +114,7 @@ header {
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   border-radius: 10px;
+
 }
 
 .title_container  {

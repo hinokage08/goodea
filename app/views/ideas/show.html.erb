@@ -1,48 +1,50 @@
-<div class="show_container">
+<div class="main_container">
+  <div class="show_container">
     <%if current_user == @idea.user%>
     <div class="edit_link">
-        <%= link_to "このアイデアを編集する", edit_idea_path(@idea.id)%>
+      <%= link_to "このアイデアを編集する", edit_idea_path(@idea.id)%>
     </div>
     <% end %>
     <div class="show_user_container">
     <%= link_to user_path(@idea.user.id) do %>
-        <% if @idea.user.profile_image? %>
-            <%= image_tag(@idea.user.profile_image.url, size: "80x80") if @idea.user.profile_image && @idea.user.profile_image.url %>
-        <% elsif @idea.user.image? %>
-            <%= image_tag(@idea.user.image, size: "80x80") if @idea.user.image %>
-        <% else %>
-            <%= image_tag("noimage.png", size: "80x80") %>
-        <% end %>
-        <p><%= @idea.user.name %></p>
+      <% if @idea.user.profile_image? %>
+        <%= image_tag(@idea.user.profile_image.url, size: "80x80") if @idea.user.profile_image && @idea.user.profile_image.url %>
+      <% elsif @idea.user.image? %>
+        <%= image_tag(@idea.user.image, size: "80x80") if @idea.user.image %>
+      <% else %>
+        <%= image_tag("noimage.png", size: "80x80") %>
+      <% end %>
+      <p><%= @idea.user.name %></p>
     <%end%>
     </div>
     <div class="show_title_container">
-        <%= @idea.title %>
+      <%= @idea.title %>
     </div>
     <div class="show_image_container">
     <%= image_tag(@idea.image.url) if @idea.image && @idea.image.url %>
     </div>
     <div class="content_container">
-        <%= @idea.content.html_safe %>
+      <%= @idea.content.html_safe %>
     </div>
     <div class="favorite">
-        <% if user_signed_in?%>
-            <% unless @idea.user_id == current_user.id %>
-                <% if @favorite.present? %>
-                    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
-                <% else %>
-                    <%= link_to 'お気に入りする', favorites_path(idea_id: @idea.id), method: :post, class: 'btn btn-primary' %>
-                <% end %>
-            <% end %>
+      <% if user_signed_in?%>
+        <% unless @idea.user_id == current_user.id %>
+          <% if @favorite.present? %>
+            <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+            <%= link_to 'お気に入りする', favorites_path(idea_id: @idea.id), method: :post, class: 'btn btn-primary' %>
+          <% end %>
         <% end %>
+      <% end %>
     </div>
     <div class="comments_container">
-        <h4>コメント</h4>
-        <div id= "comments_area">
-            <%= render partial: 'comments/index', locals:{ comments: @comments } %>
-        </div>
-        <% if user_signed_in? %>
-            <%= render partial: 'comments/form', locals: { comment: @comment, idea: @idea } %>
-        <% end %>
+      <h4>コメント</h4>
+      <div id= "comments_area">
+        <%= render partial: 'comments/index', locals:{ comments: @comments } %>
+      </div>
+      <% if user_signed_in? %>
+        <%= render partial: 'comments/form', locals: { comment: @comment, idea: @idea } %>
+      <% end %>
     </div>
+  </div>
 </div>

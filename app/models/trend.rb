@@ -90,11 +90,16 @@ class Trend < ApplicationRecord
           unless edge.node.image.recommendedImageUrl.index("https://twitter.com")
             return edge.node.image.recommendedImageUrl
             break
+          else
+            if idx == edges.size - 1
+              return "noimage.png"
+            end
           end
-
         elsif idx == edges.size - 1
           return "noimage.png"
         end
+      elsif idx == edges.size - 1
+        return "noimage.png"
       end
     end
   end

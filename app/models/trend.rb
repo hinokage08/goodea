@@ -86,7 +86,6 @@ class Trend < ApplicationRecord
     edges = query(title: works_name).searchWorks.edges
     edges.each_with_index do |edge, idx|
       if edge.node.image
-        binding.pry
         if edge.node.image.recommendedImageUrl.present?
           unless edge.node.image.recommendedImageUrl.index("https://twitter.com")
             return edge.node.image.recommendedImageUrl

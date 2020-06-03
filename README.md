@@ -3,7 +3,7 @@
 ---
 ### 新機能_トレンド機能追加
 ![goodea](https://user-images.githubusercontent.com/54502466/83584388-f9e32a80-a581-11ea-93b5-b6139781924e.gif)
-Twitterのアニメ関連のトレンドをトップページにて表示する機能です。
+Twitterのアニメ関連のトレンドをトップページにて表示する機能です。  
 （画像クリックでその作品のタグ一覧にリンクする予定です)
 
 ### 概要
@@ -92,14 +92,14 @@ mini_magick
 - タグ機能  
 acts-as-taggable-on  
 - アイデア投稿機能  
-tinymce-rails
-tinymce-rails-langs
-- トレンド表示機能
-graphql
-graphql-client
-twitter
-google-api-client
-sidekiq
-redis-namespace
-sidekiq-scheduler
-sinatra
+tinymce-rails  
+tinymce-rails-langs  
+- トレンド表示機能  
+graphql  
+graphql-client  
+twitter  
+google-api-client  
+sidekiq  
+redis-namespace  
+sidekiq-scheduler  
+sinatra  

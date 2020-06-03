@@ -1,15 +1,15 @@
 <div class="new_container">
   <%= form_with(model: @idea, local: true) do |f| %>
     <% if @idea.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @idea.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @idea.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <div id="error_explanation">
+        <h2><%= @idea.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @idea.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-    </ul>
-    </div>
-  <% end %>
       <div class="image_container">
         <div id="img_field" onClick="$('#file').click()" class="idea_image" >
           <% if @idea.image.url.present? %>

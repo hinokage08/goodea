@@ -1,6 +1,11 @@
 # README
 ## goodea!(グッディア!)
 ---
+### 新機能_トレンド機能追加
+![goodea](https://user-images.githubusercontent.com/54502466/83584388-f9e32a80-a581-11ea-93b5-b6139781924e.gif)
+Twitterのアニメ関連のトレンドをトップページにて表示する機能です。
+（画像クリックでその作品のタグ一覧にリンクする予定です)
+
 ### 概要
 「好きなアニメ・ゲーム・漫画のグッズが欲しいなぁ…でもあまり良い感じのグッズが販売されてなくて悲しい」  
 こんな経験ありませんか？  
@@ -25,9 +30,8 @@ Rails 5.2.3
 - ユーザー登録機能  
     - ユーザー名、メールアドレス、パスワードは必須  
 - アイデア投稿・保存機能
-    - 画像アップロード機能
-    - リッチテキストコンテンツ編集機能<br>
-    リッチコンテンツ機能についてはherokuの環境でうまく動かないため一旦削除
+    - 画像アップロード機能(EC2)
+    - リッチテキストコンテンツ編集機能
     - カテゴリ設定
     - タグ設定
 - アイデア一覧機能
@@ -49,7 +53,7 @@ Rails 5.2.3
     - アイデア投稿ページでタグの編集・追加ができる
 - カテゴリ機能
 - コメント機能
-- SNS連携機能(投稿した内容をSNSにリンク付きでツイートできる)  
+- トレンド表示機能
 ### カタログ設計  
 ---  
 https://docs.google.com/spreadsheets/d/1nwZebA3X9Ebh8Tr7KbmF_GQhM9mq58KZ7rRuINe-G1I/edit#gid=0  
@@ -88,4 +92,14 @@ mini_magick
 - タグ機能  
 acts-as-taggable-on  
 - アイデア投稿機能  
-~~tinymce-rails~~
+tinymce-rails
+tinymce-rails-langs
+- トレンド表示機能
+graphql
+graphql-client
+twitter
+google-api-client
+sidekiq
+redis-namespace
+sidekiq-scheduler
+sinatra

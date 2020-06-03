@@ -50,4 +50,12 @@ $(function(){
       speed: 2000,
       slidesToShow: 3,
   })
+
+  $('.trend_slide').slick({
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 9000,
+    speed: 2000,
+    slidesToShow: 3,
+  })
   });

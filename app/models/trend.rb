@@ -82,8 +82,21 @@ class Trend < ApplicationRecord
     end
   end
 
-  def self.anict_search(works_name)
-    edges = query(title: works_name).searchWorks.edges
+  def self.anict_search_title(work)
+    edges = query(title: work).searchWorks.edges
+    edges.each_with_index do |edge, idx|
+      if edge.node.title
+        if idx == edges.size - 1
+          return edge.node.title
+        end
+      else
+        return "unknown"
+      end
+    end
+  end
+
+  def self.anict_search_image(work)
+    edges = query(title: work).searchWorks.edges
     edges.each_with_index do |edge, idx|
       if edge.node.image
         if edge.node.image.recommendedImageUrl.present?

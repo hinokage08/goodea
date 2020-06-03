@@ -6,12 +6,8 @@
     <% @trends.each do |trend|%>
       <% unless trend.anime_url.blank?%>
         <div class="trend">
-          <div class="trend_tag">
-              <%= trend.title %>
-          </div>
-          <div class="trend_image">
+            <p><%= trend.title %></p>
             <%= image_tag(trend.anime_url)%>
-          </div>
         </div>
       <% end %>
     <% end %>

@@ -2,6 +2,7 @@ class IdeasController < ApplicationController
     before_action :set_idea, only:[:show, :edit, :update, :destroy]
     before_action :authenticate_user!, only:[:new, :create, :edit, :upadate, :destory, :my_idea]
     before_action :check_user, only: [:edit, :update, :delete]
+    before_action :set_ranking_data, only: [:top]
   
     def index
         @ideas = Idea.all
@@ -24,6 +25,7 @@ class IdeasController < ApplicationController
     def show
         @comments = @idea.comments
         @comment = @idea.comments.build
+        REDIS.zincrby "ideas/daily/#{Date.today.to_s}", 1, @idea.id
     end
 
     def edit
@@ -57,6 +59,15 @@ class IdeasController < ApplicationController
     def set_idea
         @idea = Idea.find(params[:id])
     end 
+
+    def set_ranking_data
+      ids = REDIS.zrevrangebyscore "ideas/daily/#{Date.today.to_s}", "+inf", 0, limit: [0, 5]
+      @ranking_ideas = ids.map{ |id| Idea.find(id) }
+      if @ranking_ideas.count < 5
+        adding_ideas = Idea.order(updated_at: :DESC).where.not(id: ids).limit(5 - @ranking_ideas.count)
+        @ranking_ideas.concat(adding_ideas)
+      end
+    end
     
     def idea_params
         params.require(:idea).permit(:title, :content, :image, :image_cache, :tag_list, category_ids: [])

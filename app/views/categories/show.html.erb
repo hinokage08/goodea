@@ -1,3 +1,12 @@
+<div class="categories_container">
+  <div class="category_link">
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category.id) do %>
+        <%= category.name %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 <div class="index_container">
 <div class="title_container">
     投稿アイデア一覧
@@ -23,3 +32,4 @@
         </div>
         <%#= link_to "削除", idea_path(idea.id), method: :delete ,data:{ confirm: '本当に削除してもよろしいですか？'} %>
     <% end %>
+</div>

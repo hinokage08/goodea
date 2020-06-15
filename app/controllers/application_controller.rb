@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
     # deviseコントローラーにストロングパラメータを追加する          
     before_action :configure_permitted_parameters, if: :devise_controller?
     before_action :set_search
+    before_action :set_category
 
     protected
     def after_sign_in_path_for(resource)
@@ -20,5 +21,9 @@ class ApplicationController < ActionController::Base
     def set_search
         @search = Idea.ransack(params[:q])
         @search_ideas = @search.result
+    end
+
+    def set_category
+      @categories = Category.all
     end
 end

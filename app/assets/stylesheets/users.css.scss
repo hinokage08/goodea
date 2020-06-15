@@ -46,6 +46,15 @@
 }
 
 //show
+.title {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-size:25px;
+  margin-left: 170px;
+  font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+}
+
 .mypage_container {
     width: 1000px;
     height: 100%;
@@ -68,11 +77,23 @@
     margin: 2em ;
 }
 
+.mypage_icon img{
+  width: 100px;
+  height:100px;
+  border-radius: 50%; 
+  border: solid 0.2px;
+}
+
+.profile_container p {
+  font-weight: bold;
+  margin: 0;
+}
+
 .profile {
     width: 600px;
     height: 200px;
     padding: 0.5em 1em;
-    margin: 2em 0;
+
     font-weight: bold;
     color: #6091d3;
     background: #FFF;
@@ -113,6 +134,13 @@
 .my_account_image {
     text-align: center;
     margin: 2em 0;
+}
+
+.my_account_image img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: solid 0.2px; 
 }
 
 .my_account_title_container {
@@ -158,4 +186,11 @@
 .follow_user_name_profile_container {
     width:100px;
     height: 100px;
+}
+
+.follow_user_image img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; 
+  border: solid 0.2px;
 }

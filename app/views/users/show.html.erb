@@ -1,17 +1,16 @@
-<div class="mypage_container">
-<div class="mypage_title_container">
-マイページ
+<div class="title">
+  ーマイページー
 </div>
+<div class="mypage_container">
     <div class="icon_name_container">
-        <div class="mypage_icon">
-        
-            <% if @user.profile_image? %>
-                <%= image_tag(current_user.profile_image.url, size: "100x100") if current_user.profile_image && current_user.profile_image.url %>
-            <% elsif @user.image? %>
-                <%= image_tag(@user.image, size: "100x100") if current_user.image %>
-            <% else %>
-                <%= image_tag("noimage.png", size: "100x100") %>
-            <% end %>
+        <div class="mypage_icon">  
+          <% if @user.profile_image? %>
+            <%= image_tag(current_user.profile_image.url) if current_user.profile_image && current_user.profile_image.url %>
+          <% elsif @user.image? %>
+            <%= image_tag(@user.image) if current_user.image %>
+          <% else %>
+            <%= image_tag("noimage.png") %>
+          <% end %>
         </div>
         <div class="mypage_name">
             <%= @user.name %>
@@ -24,8 +23,11 @@
             <%= link_to "プロフィール編集", edit_user_path(@user.id) %>
         <% end %>
     </div>
-    <div class="profile">
+    <div class="profile_container">
+      <p>プロフィール</p>
+      <div class="profile">
         <%= @user.profile%>
+      </div>
     </div>
     <div class="mypage_title_container">
         <%= link_to "投稿したアイデア一覧", my_idea_ideas_path%>

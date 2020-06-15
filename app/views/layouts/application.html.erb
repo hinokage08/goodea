@@ -19,6 +19,7 @@
   </head>
 
   <body data-turbolinks="false">
+  <div id="wrapper">
     <header>
       <div class="header_container">
         <div class="left_container">
@@ -33,15 +34,6 @@
               <div class="header_link">
                 <%= link_to 'アイデア投稿', new_idea_path %>
               </div>
-              <div class="header_link">
-                <%= link_to 'アイデア管理', my_idea_ideas_path(current_user.id) %>
-              </div>
-              <div class="header_link">
-                <%= link_to 'トップページ', top_ideas_path %>
-              </div>
-              <div class="header_link">
-                <%= link_to 'マイページ', user_path(current_user.id) %>
-              </div>
             <% end %>
           </div>
         </div>
@@ -54,21 +46,49 @@
               <% end %>
             </dl>
           </div>
-          <div class="user_container">
             <% if user_signed_in? %>
-              <%= link_to user_path(current_user.id) do %>
+              <div class="menu-trigger" href="#">
                 <% if current_user.profile_image? %>
-                  <%= image_tag(current_user.profile_image.url, size: "50x50") if current_user.profile_image && current_user.profile_image.url %>
+                  <%= image_tag(current_user.profile_image.url) if current_user.profile_image && current_user.profile_image.url %>
                 <% else %>
-                  <%= image_tag(current_user.image, size: "50x50") if current_user.image %>
+                  <%= image_tag(current_user.image) if current_user.image %>
                 <% end %>
+              </div>  
+            <nav>
+              <div class="nav_img">
+                <%= link_to user_path(current_user.id) do %>
+                  <% if current_user.profile_image? %>
+                    <%= image_tag(current_user.profile_image.url) if current_user.profile_image && current_user.profile_image.url %>
+                  <% else %>
+                    <%= image_tag(current_user.image) if current_user.image %>
+                  <% end %>
                 <% end %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </div>
+              <div class="nav_username">
+                <%= current_user.name%>
+              </div>
+              <div class="nav_following">
+                <p><%= current_user.following.count%></p>
+                フォロー中
+              </div>
+              <div class="nav_followers">
+                <p><%= current_user.followers.count%></p>
+                フォロワー
+              </div>
+              <div class="nav_link">
+                <ul>
+                  <li><%= link_to 'アイデア管理', my_idea_ideas_path(current_user.id) %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </div>
+            </nav>
             <% else %>
-            <%= link_to "新規作成", new_user_registration_path %>
-            <%= link_to "ログイン", new_user_session_path %>
+              <div class="h-create_user">
+                <%= link_to "新規作成", new_user_registration_path %>
+              </div>
+              <div class="h-login">
+                <%= link_to "ログイン", new_user_session_path %>
+              </div>
             <% end %>
-          </div>
         </div>
     </div>
     </header>
@@ -77,5 +97,30 @@
     <div class="body_container">
     <%= yield %>
     </div>
+    <footer>
+      <div class="footer_container">
+        <div class="f-grid">
+          <div class="f-grid_right">
+            <p class="logo_p">goodea!</p>
+            <ul>
+              <li>goodea!とは?</li>
+            </ul>
+          </div>
+          <div class="f-grid_left">
+            <p class="category_p">カテゴリー</p>
+            <div class="categories_list">
+              <% @categories.each do |category| %>
+                <%= link_to category_path(category.id) do %>
+                  <ul>
+                    <li><%= category.name %></li>
+                  </ul>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
   </body>
 </html>

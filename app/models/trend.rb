@@ -38,7 +38,8 @@ class Trend < ApplicationRecord
   end
 
   def self.related_word_search(trend)
-      query = trend
+      query = trend + " filter:hashtags"
+      binding.pry
       search_results= twitter.search(query, lang:"ja", count: 500, result_type: "mixed", tweet_mode: "extended").take(500)
       hashtag = []
       search_results.each do |result|

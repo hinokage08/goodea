@@ -26,7 +26,7 @@ class User < ApplicationRecord
               provider: auth.provider,
               email:    User.dummy_email(auth),
               password: Devise.friendly_token[0, 20],
-              image: auth.info.image,
+              remote_profile_image_url: auth.info.image,
               name: auth.info.name,
               nickname: auth.info.nickname,
               location: auth.info.location

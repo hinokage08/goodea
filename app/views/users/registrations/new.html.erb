@@ -1,34 +1,27 @@
-<div class="session_container">
+<div class="sign-up_container">
   <h2><%= t('.sign_up') %></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :ユーザー名 %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "ユーザー名",id: "user_name" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "ユーザー名",　id: "user_name", placeholder: "ユーザー名" %>
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
     </div>
 <% if f.object.password_required? %>
     <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード(確認用)" %>
     </div>
 <% end %>
     <div class="actions">
-      <%= f.submit t('.sign_up') %>
+      <%= f.submit t('.sign_up'), id: "sign_up" %>
     </div>
   <% end %>
 

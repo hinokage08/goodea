@@ -7,13 +7,13 @@
     <% end %>
     <div class="show_user_container">
     <%= link_to user_path(@idea.user.id) do %>
-      <% if @idea.user.profile_image? %>
-        <%= image_tag(@idea.user.profile_image.url, size: "80x80") if @idea.user.profile_image && @idea.user.profile_image.url %>
-      <% elsif @idea.user.image? %>
-        <%= image_tag(@idea.user.image, size: "80x80") if @idea.user.image %>
-      <% else %>
-        <%= image_tag("noimage.png", size: "80x80") %>
-      <% end %>
+      <div class="nav_img">
+        <% if @idea.user.profile_image.identifier == "noimage.png" %>
+          <%= image_tag(@idea.user.profile_image.identifier) %>
+        <% elsif @idea.user.profile_image? %>
+          <%= image_tag(@idea.user.profile_image.url) if @idea.user.profile_image && @idea.user.profile_image.url %>
+        <% end %>
+      </div>
       <p><%= @idea.user.name %></p>
     <%end%>
     </div>

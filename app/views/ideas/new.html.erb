@@ -44,7 +44,6 @@
         <div id ="idea_tag" class="idea_tag">
           <%= text_field_tag 'idea[tag_list]', @idea.tag_list.join(','), "data-role" => "tagsinput", placeholder: "タグをカンマ区切りで入力", id: "idea_tag" %>
         </div>
-
         <%= f.submit "投稿する"%>
         <%end%>
       </div>

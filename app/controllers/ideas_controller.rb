@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
     before_action :set_ranking_data, only: [:top]
   
     def index
-        @ideas = Idea.all
+        @ideas = Idea.page(params[:page]).per(20)
     end
     
     def new
@@ -45,10 +45,10 @@ class IdeasController < ApplicationController
     def top
         @ideas = Idea.all.order(id: "DESC").first(9)
         @category = Category.all
-        @all_ranks = Idea.find(Favorite.group(:idea_id).order('count(idea_id) desc').limit(3).pluck(:idea_id))
+        @all_ranks = Idea.find(Favorite.group(:idea_id).order('count(idea_id) desc').limit(5).pluck(:idea_id))
         @trends = Trend.all
+        @tags = ActsAsTaggableOn::Tag.most_used.first(5)
     end
-
     
     def my_idea
         @ideas = current_user.ideas.all

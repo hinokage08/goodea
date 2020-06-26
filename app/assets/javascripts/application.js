@@ -48,7 +48,7 @@ $(function(){
       autoplay: true,
       autoplaySpeed: 9000,
       speed: 2000,
-      slidesToShow: 3,
+      slidesToShow: 5,
   })
 
   $('.trend_slide').slick({
@@ -57,6 +57,30 @@ $(function(){
     autoplaySpeed: 9000,
     speed: 2000,
     slidesToShow: 3,
+  })
+
+  $('.tag_image_slide').slick({
+    dots: false,
+    autoplay: false,
+    autoplaySpeed: 9000,
+    speed: 2000,
+    slidesToShow: 5,
+  })
+
+  $('.rank_favorite_slide').slick({
+    dots: false,
+    autoplay: false,
+    autoplaySpeed: 9000,
+    speed: 2000,
+    slidesToShow: 5,
+  })
+
+  $('.rank_pv_slide').slick({
+    dots: false,
+    autoplay: false,
+    autoplaySpeed: 9000,
+    speed: 2000,
+    slidesToShow: 5,
   })
 
   $('.ranking_slide').slick({

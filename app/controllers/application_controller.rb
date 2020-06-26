@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
     def set_search
         @search = Idea.ransack(params[:q])
-        @search_ideas = @search.result
+        @search_ideas = @search.result.page(params[:page]).per(20)
     end
 
     def set_category

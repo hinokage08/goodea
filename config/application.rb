@@ -11,6 +11,7 @@ Bundler.require(*Rails.groups)
 
 module Goodea
   class Application < Rails::Application
+    config.time_zone = 'Tokyo'
     config.serve_static_assets = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2

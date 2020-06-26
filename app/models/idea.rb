@@ -7,7 +7,7 @@ class Idea < ApplicationRecord
     has_many :categorizes,dependent: :destroy
     has_many :categories, through: :categorizes, source: :category
 
-    validates :title, presence: true, length: { maximum:20 }
+    validates :title, presence: true, length: { maximum:30 }
     validates :content, presence: true
     validates :category_ids, presence: true
     validate  :tag_list_tag_validation

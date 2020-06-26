@@ -6,14 +6,36 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do |n|
-    user = User.new(email: "test#{n}@yahoo.co.jp", name: "test#{n}", password: "testuser#{n}", profile: "よろしく")
-    user.save!
-end
+category = ["フィギュア", "キーホルダー・ストラップ", "缶バッジ", "雑貨", "アパレルアイテム", "アクセサリー", "コスメ", "文具デスク用品", "その他"]
+category.each { |sample| Category.create(name: sample) }
 
-%W[フィギュア キーホルダー・ストラップ 缶バッジ 雑貨 アパレルアイテム アクセサリー コスメ関連 文具デスク用品 その他].each { |sample| Category.create(name: sample) }
+anime_title = ["鬼滅の刃", "プリンセスコネクト", "僕のヒーローアカデミア", "ドラえもん", "ポケットモンスター", "ラブライブ", "アイドルマスター", "刀剣乱舞", "GRANBLUE FANTASY"]
 
-20.times do |n|
-    idea = Idea.new(title: "鬼滅の刃のアクセサリー", content: "testest#{n}", category_ids: ["1"], tag_list: "鬼滅の刃", user_id: User.first.id + n)
+20.times do |i|
+  i += 1
+  user = User.new(
+    email: "test#{i}@yahoo.co.jp", 
+    name: "test#{i}", 
+    password: "testuser#{i}", 
+    profile: "よろしく",
+  )
+  user.save!
+
+  5.times do |j|
+    j += 1
+    anime_num = rand(0..8)
+    ca_num = rand(0..7)
+    idea = Idea.new(
+      title: "#{anime_title[anime_num]}の#{category[ca_num]}", 
+      content: "このデザインのグッズが欲しい", 
+      category_ids: ["#{ca_num + 1}"], 
+      tag_list: "#{anime_title[anime_num]}", 
+      user_id: i,
+      image: open("./db/picture/image#{ca_num + 1}.png")
+    )
     idea.save!
+    Favorite.create(idea_id: i, user_id: j)
+  end
 end
+
+

@@ -56,7 +56,7 @@
                   <%= image_tag("noimage.png") %>
                 <% end %>
               </div>  
-            <nav>
+            <nav class= "user_nav">
               <div class="nav_img">
                 <%= link_to user_path(current_user.id) do %>
                   <% if current_user.profile_image? %>

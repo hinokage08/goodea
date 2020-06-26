@@ -1,104 +1,168 @@
-  <div class="trend_container">
-    <div class="trend_f_title">
-      Twitterで話題の作品からアイデアを探してみる？
-    </div>
-    <div class="trend_image_container trend_slide">
-    <% @trends.each do |trend|%>
-      <% unless trend.anime_url.blank?%>
-        <div class="trend">
-          <p class="trend_word"><%= trend.trend_word %></p>
-          <p class="trend_title"><%= trend.title %></p>
-          <%= link_to ideas_path(q: {tags_name_cont: trend.title}) do %>
-            <%= image_tag(trend.anime_url)%>
-          <% end %>
-        </div>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
+
   <div class="main_container">
-    <div class="category_container">
-      <div class="category_title_container">
-        グッズカテゴリー
-      </div>
-      <div class="category_list">
-        <% @categories.each do |category| %>
-          <%= link_to category_path(category.id) do %>
-            <ul>><%= category.name %></ul>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
+
 
     <div class="index_container">
-    <div class="title_container">
-        新着アイデア
-    </div>
-    <div class="new_article_container slide">
-      <% @ideas.each do |idea| %>
-          <div class="article">
-              <div class="article_tag">
-                <%= idea.tag_list.first%>
-              </div>
-              <div class="article_image">
-                  <%= link_to idea_path(idea.id) do %>
-                      <% if idea.image && idea.image.url %>
-                              <%= image_tag(idea.image.url, size: "200x200") %>
-                      <% else %>
-                          <%= image_tag("noimage.png", size: "200x200") %>
-                      <% end %>
-                  <%end%>
-              </div>
-              <div class="article_title">
-                  <%= idea.title %>
-              </div>
+    <% unless @trends.first.blank?%>
+      <div class="title_container">
+        <a>Twitterで話題の作品からアイデアを探してみる？
+          <div class="l-chara">
+            (<%= @trends.first.updated_at.strftime("%m-%d %H:%M") %>更新)
           </div>
-      <% end %>
-    </div>
-    </div>
-    <div class="rank_container ranking_slide">
-      <div class="rank_favorite_container">
-        <div class="rank_title_container">
-            いいねランキング
-        </div>
-        <% @all_ranks.each.with_index(1) do |idea, i| %>
-        <div class="rank_article">
-          <div class="rank_article_image">
-            <%= link_to idea_path(idea.id) do %>
-              <% if idea.image && idea.image.url %>
-                      <%= image_tag(idea.image.url, size: "80x80", id: "rank") %>
+        </a>
+      </div>
+    <% end %>
+      <div class="trend_image_container trend_slide">
+        <% n = 0 %>
+        <% @trends.each_with_index do |trend, idx|%>
+          <% unless trend.anime_url.blank?%>
+            <div class="trend">
+              <p class="trend_word"><%= trend.trend_word %></p>
+              <p class="trend_title"><%= trend.title %></p>
+              <%= link_to ideas_path(q: {tags_name_cont: trend.title}) do %>
+                <%= image_tag(trend.anime_url)%>
+              <% end %>
+            </div>
+            <% n += 1 %>
+          <% end %>
+          <% if n <= 3 && idx == @trends.size - 1%>
+            <% while n <= 2 %>
+              <div class="trend">
+                <%= image_tag("noimage.png")%>
+              </div>
+              <% n += 1%>
+            <% end %>
+          <% end %>
+        <% end %> 
+      </div>
+
+      <div class="title_container">
+        <a>新着アイデア</a>
+      </div>
+      <div class="new_article_container slide">
+        <% @ideas.each do |idea| %>
+          <div class="article">
+            <div class="article_tag">
+              <%= idea.tag_list.first%>
+            </div>
+            <div class="article_image">
+              <%= link_to idea_path(idea.id) do %>
+                <% if idea.image && idea.image.url %>
+                  <%= image_tag(idea.image.url, size: "200x200") %>
+                <% else %>
+                  <%= image_tag("noimage.png", size: "200x200") %>
+                <% end %>
+              <%end%>
+            </div>
+            <div class="article_title">
+              <%= idea.title %>
+            </div>
+            <div class="article_creater">
+              <div class="article_creater_img">
+                <%= link_to user_path(idea.user.id) do %>
+                  <% if idea.user.profile_image.identifier == "noimage.png" %>
+                    <%= image_tag(idea.user.profile_image.identifier) %>
+                  <% else %>
+                    <%= image_tag(idea.user.profile_image.url) %>
+                  <% end %>
+                <% end %>
+              </div>           
+              <div class= "article_creater_name">
+                <%= idea.user.name%>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="title_container">
+        <a>人気のタグ</a>
+      </div>
+      <div class="most_tag_container tag_image_slide">
+        <% @tags.each do |tag|%>
+          <% unless tag.image.blank?%>
+            <div class="tag_image">
+              <p class="tag_name"><%= tag.name %></p>
+              <%= link_to ideas_path(q: {tags_name_cont: tag.name}) do %>
+                <%= image_tag(tag.image)%>
+              <% end %>
+            </div>
+          <%end%>
+        <% end %>
+      </div>
+      <div class="title_container">
+        <a>PVランキング(<%=Date.today%>)</a>
+      </div>
+      <div class="rank_pv_container rank_pv_slide">
+        <% @ranking_ideas.each.with_index(1) do |ranking_idea, i| %>
+        <div class="article">
+          <div class="article_tag">
+            <%= ranking_idea.tag_list.first%>
+          </div>
+          <div class="article_image">
+            <%= link_to idea_path(ranking_idea.id) do %>
+              <% if ranking_idea.image && ranking_idea.image.url %>
+                <%= image_tag(ranking_idea.image.url, size: "200x200") %>
               <% else %>
-                  <%= image_tag("noimage.png", size: "80x80", id: "rank")%>
+                <%= image_tag("noimage.png", size: "200x200") %>
               <% end %>
             <%end%>
-            <div class="rank_article_title">
-              <%= idea.title.truncate(15)%>
-              <p>@<%= idea.user.name.truncate(10)%></p>
+          </div>
+          <div class="article_title">
+            <%= ranking_idea.title %>
+          </div>
+          <div class="article_creater">
+            <div class="article_creater_img">
+              <%= link_to user_path(ranking_idea.user.id) do %>
+                <% if ranking_idea.user.profile_image.identifier == "noimage.png" %>
+                  <%= image_tag(ranking_idea.user.profile_image.identifier) %>
+                <% else %>
+                  <%= image_tag(ranking_idea.user.profile_image.url) %>
+                <% end %>
+              <% end %>
+            </div>           
+            <div class= "article_creater_name">
+              <%= ranking_idea.user.name%>
             </div>
           </div>
         </div>
         <% end %>
       </div>
-      <div class="rank_pv_container">
-        <div class="rank_title_container">
-          PVランキング(day)
-        </div>
-        <% @ranking_ideas.each.with_index(1) do |ranking_idea, i| %>
-        <div class="rank_article">
-          <div class="rank_article_image">
-            <%= link_to idea_path(ranking_idea.id) do %>
-              <% if ranking_idea.image && ranking_idea.image.url %>
-                      <%= image_tag(ranking_idea.image.url, size: "80x80", id: "rank") %>
-              <% else %>
-                  <%= image_tag("noimage.png", size: "80x80", id: "rank")%>
-              <% end %>
-            <%end%>
-            <div class="rank_article_title">
-              <%= ranking_idea.title.truncate(15)%>
-              <p>@<%= ranking_idea.user.name.truncate(10)%></p>
+      <div class="title_container">
+        <a>いいねランキング</a>
+      </div>
+      <div class="rank_favorite_container rank_favorite_slide">
+        <% @all_ranks.each.with_index(1) do |idea, i| %>
+          <div class="article">
+            <div class="article_tag">
+              <%= idea.tag_list.first%>
+            </div>
+            <div class="article_image">
+              <%= link_to idea_path(idea.id) do %>
+                <% if idea.image && idea.image.url %>
+                  <%= image_tag(idea.image.url, size: "200x200") %>
+                <% else %>
+                  <%= image_tag("noimage.png", size: "200x200") %>
+                <% end %>
+              <%end%>
+            </div>
+            <div class="article_title">
+              <%= idea.title %>
+            </div>
+            <div class="article_creater">
+              <div class="article_creater_img">
+                <%= link_to user_path(idea.user.id) do %>
+                  <% if idea.user.profile_image.identifier == "noimage.png" %>
+                    <%= image_tag(idea.user.profile_image.identifier) %>
+                  <% else %>
+                    <%= image_tag(idea.user.profile_image.url) %>
+                  <% end %>
+                <% end %>
+              </div>           
+              <div class= "article_creater_name">
+                <%= idea.user.name%>
+              </div>
             </div>
           </div>
-        </div>
         <% end %>
       </div>
     </div>

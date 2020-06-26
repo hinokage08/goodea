@@ -35,6 +35,11 @@ body {
   min-height: 100vh;
 }
 
+.l-chara {
+  font-size: 15px;
+  display: inline-block;
+}
+
 header {
   height: 50px;
   width: 100%;
@@ -100,7 +105,7 @@ header {
 }
 
 .index_container {
-  width: 800px;
+  width: 1300px;
   margin: 2em 3em;
   color: #5d627b;
   background: white;
@@ -112,11 +117,19 @@ header {
 .title_container  {
   width: 790px;
   text-align: left;
-  font-weight:bolder;
   margin: 1em 5px;
-  border: solid 1px;
-  color: white;
-  background: #5fad35;
+  border-left: solid 7px #1abb9a;
+  margin-bottom: 25px;
+  margin-left: 15px;
+}
+
+.title_container a{
+  margin-left: 1rem;
+  font-size: 20px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.64);
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .header_link a{
@@ -175,7 +188,7 @@ header {
   border: solid 0.2px;
 }
 
-nav {
+.user_nav {
   width: 250px;
   height: 330px;
   margin-top: 100px;

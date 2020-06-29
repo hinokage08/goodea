@@ -59,7 +59,9 @@
             <nav class= "user_nav">
               <div class="nav_img">
                 <%= link_to user_path(current_user.id) do %>
-                  <% if current_user.profile_image? %>
+                  <% if current_user.profile_image.identifier == "noimage.png" %>
+                    <%= image_tag(current_user.profile_image.identifier) %>
+                  <% elsif current_user.profile_image? %>
                     <%= image_tag(current_user.profile_image.url) if current_user.profile_image && current_user.profile_image.url %>
                   <% else %>
                     <%= image_tag("noimage.png") %>

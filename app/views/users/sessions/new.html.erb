@@ -20,6 +20,9 @@
   <div class="actions">
     <%= f.submit t('.sign_in'), id: "sign_in" %>
   </div>
+  <div class="sign-in_ts_link_btn">
+    <%= link_to 'テストユーザーログイン', users_guest_sign_in_path, method: :post %>
+  </div>
 <% end %>
 
 <%= render "users/shared/links" %>

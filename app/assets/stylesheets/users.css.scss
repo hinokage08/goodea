@@ -108,6 +108,30 @@ input[id="sign_in"], input[id="sign_up"]{
   }
 }
 
+.sign-in_ts_link_btn a{
+  display: inline-block;
+  color: black;
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+  margin: 30px 0px ;
+  border-radius: $ruler*20;
+  padding: $ruler;
+  background: linear-gradient(145deg, #22beb6, #1da099);
+  box-shadow:  3px 2px 6px #1b9791, 
+              -3px -2px 6px #25cdc4;
+  transition: all 0.2s ease-in-out;
+  font-size: 15px;
+  width: 40%;
+  text-decoration: none;
+
+  &:hover {
+    background: linear-gradient(145deg, #22beb6, #1da099);
+    box-shadow:  3px 2px 0px #1b9791, 
+                -3px -2px 0px #25cdc4;
+  }
+}
+
 .sign-in_link_btn {
   display: inline;
   position: relative;

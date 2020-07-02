@@ -14,6 +14,9 @@
     <% end %>
       <div class="trend_image_container trend_slide">
         <% n = 0 %>
+        <div class="trend">
+          <%= image_tag("goodea_trend.gif", class: "freezeframe")%>
+        </div>
         <% @trends.each_with_index do |trend, idx|%>
           <% unless trend.anime_url.blank?%>
             <div class="trend">

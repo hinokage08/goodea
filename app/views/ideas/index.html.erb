@@ -3,28 +3,35 @@
     <div class="title_container">
         <a>投稿アイデア一覧</a>
     </div>
-    <div class="new_article_container">
-    <% @search_ideas.each do |idea| %>
-      <div class="article">
-        <div class="article_tag">
-          <%= idea.tag_list.first%>
-        </div>
-        <div class="article_image">
-          <%= link_to idea_path(idea.id) do %>
-            <% if idea.image && idea.image.url %>
-              <%= image_tag(idea.image.url, size: "200x200") %>
-            <% else %>
-              <%= image_tag("noimage.png", size: "200x200") %>
-            <% end %>
-          <%end%>
-        </div>
-        <div class="article_title">
-          <%= idea.title %>
+    <% unless @search_ideas.any?%>
+      <div class="no_idea">
+        <%= image_tag("no_idea.png")%>
+      </div>
+    <% else %>
+      <div class="new_article_container">
+        <% @search_ideas.each do |idea| %>
+          <div class="article">
+            <div class="article_tag">
+              <%= idea.tag_list.first%>
+            </div>
+            <div class="article_image">
+              <%= link_to idea_path(idea.id) do %>
+                <% if idea.image && idea.image.url %>
+                  <%= image_tag(idea.image.url, size: "200x200") %>
+                <% else %>
+                  <%= image_tag("noimage.png", size: "200x200") %>
+                <% end %>
+              <%end%>
+            </div>
+            <div class="article_title">
+              <%= idea.title %>
+            </div>
+          </div>
+        <% end %>
+        <div class="paginate">
+          <%= paginate @search_ideas %>
         </div>
       </div>
     <% end %>
-    <div class="paginate">
-      <%= paginate @search_ideas %>
-    </div>
   </div>
 </div>

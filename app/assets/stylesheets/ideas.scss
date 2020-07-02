@@ -16,6 +16,10 @@
   position: relative;
 }
 
+.ff-container .ff-canvas.ff-canvas-ready {
+  border-radius: 10px;
+}
+
 .trend_word {
   position: absolute;
   color: black;
@@ -430,4 +434,16 @@ textarea {
   display: block;
   width: 100%;
   text-align: center;
+}
+
+
+.no_idea {
+  text-align: center;
+  margin: 100px auto ;
+}
+
+.no_idea img{
+  width: 800px;
+  height: auto;
+  border-radius: 10px;
 }

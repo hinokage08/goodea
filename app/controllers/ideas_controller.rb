@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
     before_action :set_ranking_data, only: [:top]
   
     def index
-        @ideas = Idea.page(params[:page]).per(20)
+        @ideas = Idea.all
     end
     
     def new

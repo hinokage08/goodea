@@ -17,8 +17,9 @@
   margin: auto 10px;
 }
 
-.ff-container .ff-canvas.ff-canvas-ready {
+.ff-container .ff-canvas {
   border-radius: 10px;
+  text-align: center;
 }
 
 .trend_word {
@@ -66,6 +67,7 @@
   height: 270px;
   text-align: center;
   vertical-align: center;
+  display: inline-block;
 }
 
 .article_title {
@@ -151,6 +153,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 50px;
 }
 
 .rank_pv_container {

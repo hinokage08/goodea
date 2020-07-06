@@ -1,3 +1,39 @@
 // Place all the styles related to the favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.favorite_container {
+  width: 1060px;
+  min-height: 500px;
+  margin: 2em 3em;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+}
+.m_title_container{
+  text-align: left;
+  margin: 1em 5px;
+  border-left: solid 7px #1abb9a;
+  margin-bottom: 25px;
+  margin-left: 15px
+}
+
+.m_title_container a{
+  margin-left: 1rem;
+  font-size: 20px;
+  line-height: 28px;
+  color: rgba(0,0,0,0.64);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.favorite_submit{
+  display: block;
+  text-align: center;
+}
+
+.article input[type=checkbox] {
+  transform: scale(1.2);
+}

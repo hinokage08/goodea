@@ -23,9 +23,10 @@ class IdeasController < ApplicationController
     end
 
     def show
-        @comments = @idea.comments
-        @comment = @idea.comments.build
-        REDIS.zincrby "ideas/daily/#{Date.today.to_s}", 1, @idea.id
+      @favorite = current_user.favorites.find_by(idea_id: @idea.id)
+      @comments = @idea.comments
+      @comment = @idea.comments.build
+      REDIS.zincrby "ideas/daily/#{Date.today.to_s}", 1, @idea.id
     end
 
     def edit

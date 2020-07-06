@@ -1,0 +1,44 @@
+
+<div class="favorite_container">
+  <div class="m_title_container">
+    <a>いいねしたアイデア</a>
+  </div>
+  <%= form_with(url: favorite_path, method: :delete, local: true) do |form| %>
+    <% @user.favorite_ideas.each do |idea| %>
+      <div class="article">
+        <%= check_box_tag "deletes[]", idea.id%>
+        <div class="article_image">
+          <%= link_to idea_path(idea.id) do %>
+            <% if idea.image && idea.image.url %>
+              <%= image_tag(idea.image.url, size: "150x150") %>
+            <% else %>
+              <%= image_tag("noimage.png", size: "200x200") %>
+            <% end %>
+          <%end%>
+        </div>
+        <div class="article_title">
+          <%= idea.title %>
+        </div>
+        <div class="article_creater">
+          <div class="article_creater_img">
+            <%= link_to user_path(idea.user.id) do %>
+              <% if idea.user.profile_image.identifier == "noimage.png" %>
+                <%= image_tag(idea.user.profile_image.identifier) %>
+              <% else %>
+                <%= image_tag(idea.user.profile_image.url) %>
+              <% end %>
+            <% end %>
+          </div>           
+          <div class= "article_creater_name">
+            <%= idea.user.name%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="favorite_submit">
+      <% if @user.favorite_ideas.present?%>
+        <%= form.submit '一括削除'%>
+      <% end %>
+    </div>
+  <% end %>
+</div>

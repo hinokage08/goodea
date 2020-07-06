@@ -27,6 +27,10 @@ class UsersController < ApplicationController
     render 'show_follower'
   end
 
+  def favorite
+    @user = User.find(params[:id])
+  end
+
   private
 
   def set_user

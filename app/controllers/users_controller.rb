@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only:[:show, :edit, :update]
   before_action :authenticate_user!, only:[:edit, :update, :destory]
-  before_action :check_user, only: [:edit, :update, :delete]
+  before_action :check_user, only: [:edit, :update, :delete, :following, :followers]
 
   def show
   end

@@ -29,7 +29,7 @@ body {
   margin: 0;
   background-color: #e9ebee;
 }
-.wrapper {
+body, #wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -379,7 +379,7 @@ header {
 
   /* フッター */
   footer {
-    margin-top:100px;
+    margin-top: auto;
     padding-top: 40px;
     padding-bottom: 40px;
     height: 200px;

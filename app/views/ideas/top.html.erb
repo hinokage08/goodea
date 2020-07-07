@@ -42,7 +42,7 @@
       </div>
       <div class="new_article_container slide">
         <% @ideas.each do |idea| %>
-          <div class="article">
+          <div class="article-top">
             <div class="article_tag">
               <%= idea.tags.pluck(:name).first%>
             </div>
@@ -95,7 +95,7 @@
       </div>
       <div class="rank_pv_container rank_pv_slide">
         <% @ranking_ideas.each.with_index(1) do |ranking_idea, i| %>
-        <div class="article">
+        <div class="article-top">
           <div class="article_tag">
             <%= ranking_idea.tags.pluck(:name).first%>
           </div>
@@ -133,7 +133,7 @@
       </div>
       <div class="rank_favorite_container rank_favorite_slide">
         <% @all_ranks.each.with_index(1) do |idea, i| %>
-          <div class="article">
+          <div class="article-top">
             <div class="article_tag">
               <%= idea.tags.pluck(:name).first%>
             </div>

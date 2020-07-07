@@ -26,6 +26,20 @@
             <div class="article_title">
               <%= idea.title %>
             </div>
+            <div class="article_creater">
+              <div class="article_creater_img">
+                <%= link_to user_path(idea.user.id) do %>
+                  <% if idea.user.profile_image.identifier == "noimage.png" %>
+                    <%= image_tag(idea.user.profile_image.identifier) %>
+                  <% else %>
+                    <%= image_tag(idea.user.profile_image.url) %>
+                  <% end %>
+                <% end %>
+              </div>           
+              <div class= "article_creater_name">
+                <%= idea.user.name%>
+              </div>
+            </div>
           </div>
         <% end %>
         <div class="paginate">

@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
     before_action :set_ranking_data, only: [:top]
   
     def index
-        @ideas = Idea.all.includes(:tags)
+        @ideas = Idea.all.includes(:tags, :user)
     end
     
     def new

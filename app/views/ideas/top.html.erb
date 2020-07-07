@@ -44,7 +44,7 @@
         <% @ideas.each do |idea| %>
           <div class="article">
             <div class="article_tag">
-              <%= idea.tag_list.first%>
+              <%= idea.tags.pluck(:name).first%>
             </div>
             <div class="article_image">
               <%= link_to idea_path(idea.id) do %>
@@ -97,7 +97,7 @@
         <% @ranking_ideas.each.with_index(1) do |ranking_idea, i| %>
         <div class="article">
           <div class="article_tag">
-            <%= ranking_idea.tag_list.first%>
+            <%= ranking_idea.tags.pluck(:name).first%>
           </div>
           <div class="article_image">
             <%= link_to idea_path(ranking_idea.id) do %>
@@ -135,7 +135,7 @@
         <% @all_ranks.each.with_index(1) do |idea, i| %>
           <div class="article">
             <div class="article_tag">
-              <%= idea.tag_list.first%>
+              <%= idea.tags.pluck(:name).first%>
             </div>
             <div class="article_image">
               <%= link_to idea_path(idea.id) do %>

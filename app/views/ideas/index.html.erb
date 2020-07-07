@@ -12,7 +12,7 @@
         <% @search_ideas.each do |idea| %>
           <div class="article">
             <div class="article_tag">
-              <%= idea.tag_list.first%>
+              <%= idea.tags.pluck(:name).first%>
             </div>
             <div class="article_image">
               <%= link_to idea_path(idea.id) do %>

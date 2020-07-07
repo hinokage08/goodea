@@ -33,9 +33,9 @@ class IdeasController < ApplicationController
     end
 
     def update
-        if @idea.update(idea_params)
-            redirect_to ideas_path
-        end
+      if @idea.update(idea_params)
+        redirect_to ideas_path
+      end
     end
 
     def destroy
@@ -52,7 +52,7 @@ class IdeasController < ApplicationController
     end
     
     def my_idea
-        @ideas = current_user.ideas.all
+        @ideas = current_user.ideas.page(params[:page]).per(20)
     end
 
     private

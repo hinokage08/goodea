@@ -95,6 +95,6 @@ gem 'sidekiq'
 gem 'redis-namespace'
 gem 'sidekiq-scheduler'
 gem 'sinatra', require: false
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'bullet'

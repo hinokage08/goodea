@@ -34,14 +34,14 @@
     <% @user.ideas.each do |idea| %>
         <div class="article">
             <div class="article_tag">
-                <%= idea.tag_list.first%>
+                <%= idea.tags.pluck(:name).first%>
             </div>
             <div class="article_image">
                 <%= link_to idea_path(idea.id) do %>
                     <% if idea.image && idea.image.url %>
-                            <%= image_tag(idea.image.url, size: "200x200") %>
+                      <%= image_tag(idea.image.url, size: "200x200") %>
                     <% else %>
-                        <%= image_tag("noimage.png", size: "200x200") %>
+                      <%= image_tag("noimage.png", size: "200x200") %>
                     <% end %>
                 <%end%>
             </div>

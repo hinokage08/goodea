@@ -260,6 +260,7 @@ input[id="sign_in"], input[id="sign_up"]{
     background: white;
     border-top: solid 5px #5d627b;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
 }
 
 .my_account_image {
@@ -287,13 +288,14 @@ input[id="sign_in"], input[id="sign_up"]{
 }
 
 .follow_container {
-    width: 800px;
+    width: 910px;
     min-height: 500px;
     margin: 2em 3em;
     color: #5d627b;
     background: white;
     border-top: solid 5px #5d627b;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
 }
 
 .follow_title_container {
@@ -311,7 +313,7 @@ input[id="sign_in"], input[id="sign_up"]{
     width: 200px;
     height: 100px;
     margin: 1em 50px;
-    display: flex;
+    display: inline-flex;
 }
 
 .follow_user_name_profile_container {

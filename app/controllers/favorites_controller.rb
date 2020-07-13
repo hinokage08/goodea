@@ -1,6 +1,5 @@
 class FavoritesController < ApplicationController
     before_action :authenticate_user!
-    before_action :
     def create
         favorite = current_user.favorites.create(idea_id: params[:idea_id])
         redirect_to ideas_url, notice: "#{favorite.idea.user.name}さんのアイデアをお気に入り登録しました"

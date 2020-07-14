@@ -23,7 +23,7 @@ class IdeasController < ApplicationController
     end
 
     def show
-      if current_user.try
+      if user_signed_in?
         @favorite = current_user.favorites.find_by(idea_id: @idea.id)
       end
       @comments = @idea.comments

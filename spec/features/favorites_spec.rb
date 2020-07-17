@@ -26,6 +26,13 @@ RSpec.feature "お気に入り機能", type: :feature do
       expect(page).to have_content 'アイデアのお気に入りを解除しました'
     end
 
+    scenario "マイページからのお気に入り解除のテスト" do
+      visit idea_path(@idea2)
+      click_on('お気に入りする')
+      click_on('お気に入り解除')
+      expect(page).to have_content 'アイデアのお気に入りを解除しました'
+    end
+
     scenario "トップページのランキングが、お気に入り数が高いアイデア順に並んでいるかのテスト" do
       visit idea_path(@idea2)
       click_on('お気に入りする')

@@ -129,7 +129,7 @@
         <% end %>
       </div>
       <div class="title_container">
-        <a>いいねランキング</a>
+        <a>お気に入りランキング</a>
       </div>
       <div class="rank_favorite_container rank_favorite_slide">
         <% @all_ranks.each.with_index(1) do |idea, i| %>
@@ -137,7 +137,7 @@
             <div class="article_tag">
               <%= idea.tags.pluck(:name).first%>
             </div>
-            <div class="article_image">
+            <div class="article_image", id="rank_img">
               <%= link_to idea_path(idea.id) do %>
                 <% if idea.image && idea.image.url %>
                   <%= image_tag(idea.image.url, size: "200x200") %>

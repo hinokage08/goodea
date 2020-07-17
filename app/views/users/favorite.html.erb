@@ -1,7 +1,7 @@
 
 <div class="favorite_container">
   <div class="m_title_container">
-    <a>いいねしたアイデア</a>
+    <a>お気に入りしたアイデア</a>
   </div>
   <%= form_with(url: favorite_path, method: :delete, local: true) do |form| %>
     <% @user.favorite_ideas.each do |idea| %>

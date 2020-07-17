@@ -85,7 +85,7 @@
                 <ul>
                   <li><%= link_to 'アイデア管理', my_idea_ideas_path(current_user.id) %></li>
                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-                  <li><%= link_to "いいね一覧", favorite_user_path(current_user.id) %></li>
+                  <li><%= link_to "お気に入り一覧", favorite_user_path(current_user.id) %></li>
               </div>
             </nav>
             <% else %>

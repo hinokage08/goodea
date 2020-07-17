@@ -1,6 +1,5 @@
 :schedule:
   TwitterAnimeTrendJob:
-    cron: '0 0,8,12,17,20 * * * Asia/Tokyo'
+    cron: '0 0,3,7,15,19 * * * America/Los_Angeles'
   TagImageJob:
     cron: '0 1,9,13,18,19 * * * Asia/Tokyo'
-    

@@ -291,9 +291,13 @@ ul {
 }
 
 .new_container {
-  text-align: center;
-  width: 100%;
-  margin-top: 30px;
+  width: 1300px;
+  margin: 2em 3em;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
 }
 
 .image_container {
@@ -305,83 +309,162 @@ ul {
 }
 
 .input_container {
-    text-align: center;
-    width: 800px;
-    margin:0 auto
+  width: auto;
+  margin:0 auto;
+}
+
+.input_container a{
+  font-size: 16px;
+  margin-right: 40px;
+  color: black;
+  text-decoration: none;
+}
+
+.idea_title {
+  display: flex;
+  width: 1000px;
+  margin-left: 160px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.idea_title a {
+  line-height: 40px;
 }
 
 .idea_title input[type="text"] {
-    width: 800px;
-    height: 40px;
-    border-radius: 5px;
-    margin: 2em 0 1em 0;
-    font-size: 16px;
+  width: 800px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-#img_field.idea_image {
-    font-size: 15px;
-    margin-top: 10px;
-    border: solid 1px #EDBC6C;
-    color: #666;
-    padding: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: #fff;
-    overflow: hidden;
-    box-sizing: border-box;
-    transition: 0.3s ease-out;
-    text-align: center;
-    display:inline-block;
+.idea_content {
+  display: flex;
+  width: 1000px;
+  height: 170px;
+  margin-left: 160px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
-#img_field i {
-    font-size: 100px;
-    color: #aaa;
-    line-height: 250px;
-    transition: 0.3s ease-out;
+.idea_content a {
+  margin-right: 10px;
+  line-height: 25px;
 }
 
-#img_field i.add {
-    display: none;
-    font-size: 50px;
-    top: -90px;
-    right: 15px;
+.tiny_mce {
+  display: inline-block
 }
-
-#img_field:hover {
-    background-color: #EDBC6C;
-    transition: 0.3s ease-out;
-    opacity: 0.9;
-}
-
-#img_field:hover i {
-    transition: 0.3s ease-out;
-    color: #fff;
-}
-
 
 .idea_category {
-    width: 720px;
-    background: white;
-    text-align: center;
-    margin: 2em 0 1em 40px;
-    border-radius: 5px;
+  display: flex;
+  width: 1000px;
+  margin-left: 160px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
-#idea_tag.idea_tag {
-    margin: 2em 0 ;
-    text-align: center;
+.idea_category a {
+  line-height: 50px;
+}
+
+.category_check-box {
+  display: inline-block;
+  width: 710px;
+  border: solid 2px;
+  border-radius: 3px;
+}
+
+.idea_tag {
+  width: 1000px;
+  margin-left: 160px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+}
+
+.idea_tag a {
+  line-height: 30px;
+}
+
+.bootstrap-tagsinput {
+  margin-left: 32px;
+  border: solid 2px;
 }
 
 .idea_tag input[type="text"]{
-    width: 700px;
+  width: 700px;
 }
 
 .submit {
-    text-align: center;
+  display: block;
+  text-align: center;
+}
+
+.custom {
+  display       : inline-block;
+  border-radius : 10px;
+  font-size     : 13pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 12px;
+  background    : #4dff4d;
+  color         : #ffffff;
+  font-weight   : bold;
+  line-height   : 1em;
+  opacity       : 1;
+  transition    : .3s;
+  box-shadow    : 2px 2px 3px #666666;
+  margin-bottom : 4rem;
+}
+.custom:hover {
+  box-shadow    : none;
+  opacity       : 0.8;
+}
+
+#img_field.idea_image {
+  font-size: 15px;
+  margin-top: 10px;
+  border: solid 1px #EDBC6C;
+  color: #666;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+  text-align: center;
+  display:inline-block;
+}
+
+#img_field i {
+  font-size: 100px;
+  color: #aaa;
+  line-height: 250px;
+  transition: 0.3s ease-out;
+}
+
+#img_field i.add {
+  display: none;
+  font-size: 50px;
+  top: -90px;
+  right: 15px;
+}
+
+#img_field:hover {
+  background-color: #EDBC6C;
+  transition: 0.3s ease-out;
+  opacity: 0.9;
+}
+
+#img_field:hover i {
+  transition: 0.3s ease-out;
+  color: #fff;
 }
 
 

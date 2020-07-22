@@ -9,3 +9,6 @@ plugins:
 toolbar:
   - undo redo | formatselect | fontselect | fontsizeselect | bold | italic | underline | alignleft | aligncenter | alignjustify | alignright | forecolor backcolor
 language: "ja"
+branding: false
+menubar: false
+width : 800

@@ -1,21 +1,18 @@
 <div class="main_container">
   <div class="show_container">
-    <%if current_user == @idea.user%>
-    <div class="edit_link">
-      <%= link_to "このアイデアを編集する", edit_idea_path(@idea.id)%>
-    </div>
-    <% end %>
     <div class="show_user_container">
-    <%= link_to user_path(@idea.user.id) do %>
-      <div class="nav_img">
-        <% if @idea.user.profile_image.identifier == "noimage.png" %>
-          <%= image_tag(@idea.user.profile_image.identifier) %>
-        <% elsif @idea.user.profile_image? %>
-          <%= image_tag(@idea.user.profile_image.url) if @idea.user.profile_image && @idea.user.profile_image.url %>
-        <% end %>
-      </div>
-      <p><%= @idea.user.name %></p>
-    <%end%>
+      <%= link_to user_path(@idea.user.id) do %>
+        <div class="create_user_img">
+          <% if @idea.user.profile_image.identifier == "noimage.png" %>
+            <%= image_tag(@idea.user.profile_image.identifier) %>
+          <% elsif @idea.user.profile_image? %>
+            <%= image_tag(@idea.user.profile_image.url) if @idea.user.profile_image && @idea.user.profile_image.url %>
+          <% end %>
+        </div>
+        <div class="create_user_name">
+          <%= @idea.user.name %>
+        </div>
+      <%end%>
     </div>
     <div class="show_title_container">
       <%= @idea.title %>

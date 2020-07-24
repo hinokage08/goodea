@@ -21,6 +21,10 @@
           <div class="article_title">
             <%= idea.title %>
           </div>
+          <div class="article_edit">
+            <%= link_to "編集", edit_idea_path(idea.id)%>
+            <%= link_to "削除", idea_path(idea.id), method: :delete ,data:{ confirm: '本当に削除してもよろしいですか？'} %>
+          </div>
         </div>
           <%#= link_to "削除", idea_path(idea.id), method: :delete ,data:{ confirm: '本当に削除してもよろしいですか？'} %>
       <% end %>

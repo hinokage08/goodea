@@ -423,6 +423,10 @@ ul {
   opacity       : 0.8;
 }
 
+.field_with_errors {
+  display: inline-block;
+}
+
 #img_field.idea_image {
   font-size: 15px;
   margin-top: 10px;
@@ -485,8 +489,18 @@ ul {
     align-items: center;
 }
 
-.edit_link {
-    text-align: right;
+.show_user_container a{
+  text-decoration: none;
+  font-weight: bold;
+  color: black; 
+}
+
+.create_user_img img{
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  border-radius: 50%;
+  text-decoration: none; 
 }
 
 .show_image_container {

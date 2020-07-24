@@ -1,40 +1,58 @@
 <%= form_with(model: @idea, local: true) do |f| %>
     <% if @idea.errors.any? %>
-    <div id="error_explanation">
+      <div id="error_explanation">
         <h2><%= @idea.errors.count %>件のエラーがあります。</h2>
         <ul>
         <% @idea.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-    </ul>
+<div class="new_container">
+  <div class="title_container">
+    <a>アイデア編集</a>
+  </div>
+  <div class="image_container">
+    <div id="img_field" onClick="$('#file').click()" class="idea_image" >
+      <% if @idea.image.url.present? %>
+        <%= image_tag(@idea.image.url) %>
+      <% else %>
+        <i class="fas fa-image">
+          <%= image_tag("picture.png") %>
+        </i><i class="fas fa-file-upload add"></i>
+      <% end %>
     </div>
-    <% end %>
-    <div class="new_container">
-        <div id="img_field" onClick="$('#file').click()" class="idea_image" >
-            <% if @idea.image.url.present? %>
-                <%= image_tag(@idea.image.url) %>
-            <% else %>
-                <i class="fas fa-image">画像</i><i class="fas fa-file-upload add"></i>
-            <% end %>
-        </div>
-            <%= f.file_field :image, class: "image", style: "display:none;", id: "file"%>
-        <div class="idea_title">
-            <%= f.text_field :title, placeholder: "タイトル(20文字以内)" %>
-        </div>
-        <div class="idea_content" >
-            <%= f.text_area :content, placeholder: "アイデア内容", class: "tinymce" %>
-        </div>
-        <div class="idea_category">
-            <p>カテゴリ</p>
-            <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
-        </div>
-
-        <div id ="idea_tag" class="idea_tag">
-            <%= text_field_tag 'idea[tag_list]', @idea.tag_list.join(','), "data-role" => "tagsinput", placeholder: "タグをカンマ区切りで入力" %>
-        </div>
-
-        <%= f.submit "変更する"%>
-        <%= link_to "削除", idea_path(@idea.id),class: 'alert alert-danger', method: :delete ,data:{ confirm: '本当に削除してもよろしいですか？'} %>
-        <%end%>
-        <%= tinymce language: "ja", plugins: ["wordcount", "paste"] %>
+    <%= f.file_field :image, class: "image", style: "display:none;", id: "file"%>
+  </div>
+  <div class="input_container">
+    <div class="idea_title">
+      <a>タイトル</a>
+      <%= f.text_field :title, placeholder: "タイトル(20文字以内)", id: "title"%>
     </div>
+    <div class="idea_content" >
+      <a>アイデア内容</a>
+      <div class="tiny_mce">
+        <%= f.text_area :content, placeholder: "アイデア内容", class: "tinymce" %>
+        <%= tinymce %>
+      </div>
+    </div>
+    <div class="idea_category">
+      <a>カテゴリ</a>
+      <div class="category_check-box">
+        <% Category.all.each do |category| %>
+          <%= f.check_box :category_ids, { multiple: true, checked: category[:checked], disabled: category[:disabled], include_hidden: false }, category[:id], id: "category" %>
+          <label><%= category.name %></label>
+        <% end %>
+      </div>
+    </div>
+    <div id ="idea_tag" class="idea_tag">
+      <a>タグ</a>
+      <%= text_field_tag 'idea[tag_list]', @idea.tag_list.join(','), "data-role" => "tagsinput", placeholder: "タグをカンマ区切りで入力", id: "idea_tag" %>
+    </div>
+    <div class="submit">
+      <%= f.submit "投稿する", class: "custom"%>
+      <%end%>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,7 @@
     <a>お気に入りしたアイデア</a>
   </div>
   <%= form_with(url: favorite_path, method: :delete, local: true) do |form| %>
-    <% @user.favorite_ideas.each do |idea| %>
+    <% @ideas.each do |idea| %>
       <div class="article">
         <%= check_box_tag "deletes[]", idea.id%>
         <div class="article_image">
@@ -37,7 +37,7 @@
     <% end %>
     <div class="favorite_submit">
       <% if @user.favorite_ideas.present?%>
-        <%= form.submit '一括削除'%>
+        <%= form.submit '一括解除'%>
       <% end %>
     </div>
   <% end %>

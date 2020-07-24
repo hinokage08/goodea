@@ -29,6 +29,7 @@ class UsersController < ApplicationController
 
   def favorite
     @user = User.find(params[:id])
+    @ideas = @user.favorite_ideas.includes(:user)
   end
 
   private

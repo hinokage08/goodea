@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_search
-        @search = Idea.includes(:tags, :user).ransack(params[:q])
+        @search = Idea.order(id: :desc).includes(:tags, :user).ransack(params[:q])
         @search_ideas = @search.result.page(params[:page]).per(20)
     end
 

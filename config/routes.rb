@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { 
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'}
-
     devise_scope :user do
       post 'users/guest_sign_in', to: 'users/sessions#new_guest'
     end
@@ -22,7 +21,7 @@ Rails.application.routes.draw do
   
   resources :ideas do
     collection do
-      get :top, :my_idea
+      get :top
     end
     resources :comments, only: [:create, :edit, :update, :destroy]
   end

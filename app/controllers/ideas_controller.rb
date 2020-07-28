@@ -53,10 +53,6 @@ class IdeasController < ApplicationController
     @tags = ActsAsTaggableOn::Tag.most_used.first(5)
   end
   
-  def my_idea
-    @ideas = @user.ideas.page(params[:page]).per(20)
-  end
-
   private
 
   def set_idea

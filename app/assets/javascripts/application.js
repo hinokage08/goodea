@@ -20,9 +20,7 @@
 //= require_tree .
 
 $(function(){
-
     $fileField = $('#file')
-    // 選択された画像を取得し表示
     $($fileField).on('change', $fileField, function(e) {
       file = e.target.files[0]
       reader = new FileReader(),
@@ -95,23 +93,15 @@ $(function(){
 
   $(function() {
     $('#left-btn').click(function() {
-      // 「.active」要素からactiveクラスを取り除いてください
       $('.active').removeClass('active');
-      
-      // 2つ目の「.slide」要素にactiveクラスをつけてください
       $('.rank_favorite_container').addClass('active');
-      
     });
   });
 
   $(function() {
     $('#right-btn').click(function() {
-      // 「.active」要素からactiveクラスを取り除いてください
       $('.active').removeClass('active');
-      
-      // 2つ目の「.slide」要素にactiveクラスをつけてください
       $('.rank_pv_container').addClass('active');
-      
     });
   });
 

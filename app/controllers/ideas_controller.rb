@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only:[:show, :edit, :update, :destroy]
+  before_action :set_idea, only:[:show, :edit, :update, :destroy, :my_idea]
   before_action :authenticate_user!, only:[:new, :create, :edit, :upadate, :destory, :my_idea]
   before_action :check_user, only: [:edit, :update, :delete]
   before_action :set_ranking_data, only: [:top]
@@ -54,7 +54,7 @@ class IdeasController < ApplicationController
   end
   
   def my_idea
-    @ideas = current_user.ideas.page(params[:page]).per(20)
+    @ideas = @user.ideas.page(params[:page]).per(20)
   end
 
   private

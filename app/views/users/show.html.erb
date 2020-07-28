@@ -1,7 +1,9 @@
 <div class="mypage_container">
-  <div class="title_container">
-    <a>マイページ</a>
-  </div>
+  <% if current_user == @user %>
+    <div class="title_container">
+      <a>マイページ</a>
+    </div>
+  <% end %>
   <div class="icon_name_container">
     <div class="mypage_icon">  
       <% if @user.profile_image.identifier == "noimage.png" %>
@@ -28,27 +30,35 @@
     </div>
   </div>
     <div class="title_container">
-      <%= link_to "投稿したアイデア一覧", my_idea_ideas_path%>
+      <%= link_to "投稿したアイデア", my_idea_ideas_path%>
     </div>
     <div class="mypage_article_container">
-    <% @user.ideas.each do |idea| %>
-      <div class="article">
-        <div class="article_tag">
-          <%= idea.tags.pluck(:name).first%>
+      <% @user.ideas.each do |idea| %>
+        <div class="article">
+          <div class="article_tag">
+            <%= idea.tags.pluck(:name).first%>
+          </div>
+          <div class="article_image">
+            <%= link_to idea_path(idea.id) do %>
+              <% if idea.image && idea.image.url %>
+                <%= image_tag(idea.image.url, size: "200x200") %>
+              <% else %>
+                <%= image_tag("noimage.png", size: "200x200") %>
+              <% end %>
+            <%end%>
+          </div>
+          <div class="article_title">
+            <%= idea.title %>
+          </div>
         </div>
-        <div class="article_image">
-          <%= link_to idea_path(idea.id) do %>
-            <% if idea.image && idea.image.url %>
-              <%= image_tag(idea.image.url, size: "200x200") %>
-            <% else %>
-              <%= image_tag("noimage.png", size: "200x200") %>
-            <% end %>
-          <%end%>
-        </div>
-        <div class="article_title">
-          <%= idea.title %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <div class="my_idea_link">
+      <% if current_user == @user %>
+        <%= link_to "すべて見る", works_user_path(@user.id)%>
+      <% else %>
+        <%= link_to "すべて見る", works_user_path(@user.id)%>
+      <% end %>
+    </div>
 </div>
 </div>

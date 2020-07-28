@@ -32,6 +32,11 @@ class UsersController < ApplicationController
     @ideas = @user.favorite_ideas.includes(:user)
   end
 
+  def works
+    @user = User.find(params[:id])
+    @ideas = @user.ideas.includes(:taggings).page(params[:page]).per(20)
+  end
+
   private
 
   def set_user

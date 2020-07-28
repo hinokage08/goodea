@@ -42,6 +42,7 @@ class IdeasController < ApplicationController
 
   def destroy
       @idea.destroy
+      REDIS.zrem "ideas/daily/#{Date.today.to_s}",@idea.id
       redirect_to ideas_path, notice:"投稿を削除しました。"
   end
 

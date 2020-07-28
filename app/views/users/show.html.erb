@@ -30,7 +30,7 @@
     </div>
   </div>
     <div class="title_container">
-      <%= link_to "投稿したアイデア", my_idea_ideas_path%>
+      <%= link_to "投稿したアイデア", works_user_path(@user.id)%>
     </div>
     <div class="mypage_article_container">
       <% @user.ideas.each do |idea| %>

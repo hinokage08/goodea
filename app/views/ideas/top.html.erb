@@ -26,13 +26,10 @@
             </div>
             <% n += 1 %>
           <% end %>
-          <% if n <= 3 && idx == @trends.size - 1%>
-            <% while n <= 2 %>
-              <div class="trend">
-                <%= image_tag("noimage.png")%>
-              </div>
-              <% n += 1%>
-            <% end %>
+          <% if n <= 1 && idx == @trends.size - 1%>
+            <div class="trend">
+              <%= image_tag("no_trend_img.png")%>
+            </div>
           <% end %>
         <% end %> 
       </div>

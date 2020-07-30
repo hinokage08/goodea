@@ -98,3 +98,4 @@ gem 'sinatra', require: false
 gem 'kaminari', '~> 0.17.0'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'bullet'
+gem 'high_voltage', '~> 3.1'

@@ -1,0 +1,68 @@
+.about_container {
+  height: 4000px;
+  width: 100%;
+  text-align: center;
+}
+
+.load-hidden {
+  visibility: hidden;
+}
+
+.about {
+  font-family: ヒラギノ丸ゴ ProN;
+  font-size: 50px;
+}
+
+.about_article1 {
+  margin-top: 160px;
+  height: 400px;
+  text-align: left;
+}
+
+.about_box1 {
+  width: 80%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.about_text2 {
+  font-size: 20px;
+  height:240px;
+  display: inline-block;
+}
+
+.about_article2 {
+  height: 400px;
+  width: 100%;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about_box2 {
+  width: 80%;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.about_text3 {
+  font-size: 20px;
+  height:200px;
+  display: inline-block;
+}
+
+.about_article3 {
+  margin-top: 200px;
+  height: 400px;
+  font-size: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.about_article4 {
+  width: 100%;
+  height: 400px;
+  text-align: right;
+  vertical-align: center;
+}

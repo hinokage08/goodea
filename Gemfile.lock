@@ -171,6 +171,7 @@ GEM
       activesupport (>= 3.0, < 6.0)
       graphql (>= 0.19.2)
     hashie (4.1.0)
+    high_voltage (3.1.2)
     http (4.4.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -472,6 +473,7 @@ DEPENDENCIES
   google-api-client (~> 0.34)
   graphql (= 1.2.2)
   graphql-client (= 0.2.3)
+  high_voltage (~> 3.1)
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks

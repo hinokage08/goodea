@@ -117,5 +117,45 @@ $(function(){
 
   $('.freezeframe').freezeframe();
 
+  $(function() {
+    ScrollReveal().reveal('.about_text1,.about_text4',{
+      delay: 700,
+      distance: "100%",
+      origin: "bottom",
+      viewFactor: 0.9
+    }
+    );
+  });
+
+  $(function() {
+    ScrollReveal().reveal('.about_article1',{
+      delay: 300,
+      distance: "100%",
+      origin: "left",
+      viewFactor: 0.9
+    }
+    );
+  });
+
+  $(function() {
+    ScrollReveal().reveal('.about_text2,.about_text3',{
+      delay: 1500,
+      viewFactor: 1.0,
+      distance: "100%",
+      origin: "bottom",
+    }
+    );
+  });
+  
+  $(function() {
+    ScrollReveal().reveal('.about_article2',{
+      delay: 300,
+      distance: "100%",
+      origin: "right",
+      viewFactor: 0.8
+    }
+    );
+  });
+
   });
 

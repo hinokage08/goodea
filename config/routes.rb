@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :ideas do
     collection do
       get :top
+      get :about
     end
     resources :comments, only: [:create, :edit, :update, :destroy]
   end

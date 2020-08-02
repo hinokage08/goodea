@@ -10,6 +10,9 @@ class TwitterAnimeTrendJob < ApplicationJob
       related_word = Trend.related_word_search(trend)
       work = Trend.trend_google_search(related_word)
       unless work == nil
+        if work == "グランブルーファンタジー"
+          work = "GRANBLUE FANTASY"
+        end
         anime_title = Trend.anict_search_title(work)
         anime_img = Trend.anict_search_image(work)
         anime_img = anime_img.delete("[]") if anime_img.empty?

@@ -1,5 +1,5 @@
 .about_container {
-  height: 4000px;
+  height: 4200px;
   width: 100%;
   text-align: center;
 }
@@ -8,61 +8,146 @@
   visibility: hidden;
 }
 
-.about {
+.about_article1 {
+  width: 100%;
+  height: 200px;
+  margin-top: 100px;
   font-family: ヒラギノ丸ゴ ProN;
   font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.about_article1 {
-  margin-top: 160px;
-  height: 400px;
-  text-align: left;
-}
-
-.about_box1 {
-  width: 80%;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.about_text2 {
-  font-size: 20px;
-  height:240px;
-  display: inline-block;
+.about_frame1 {
+  padding: 10px 120px;
+  border: solid;
 }
 
 .about_article2 {
+  width:100%;
+  margin-top: 160px;
   height: 400px;
-  width: 100%;
-  text-align: right;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.about_box2 {
+.about_article_box1 {
   width: 80%;
   border-radius: 10px;
   background-color: white;
+  display: flex;
+  align-items: center;
 }
 
-.about_text3 {
+
+.about_box_text{
   font-size: 20px;
-  height:200px;
-  display: inline-block;
+  height:240px;
+  display: flex;
+  align-items: center;
 }
 
 .about_article3 {
-  margin-top: 200px;
+  width:100%;
   height: 400px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow:hidden;
+}
+
+.about_article_box2 {
+  width: 80%;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.about_article4 {
+  margin-top: 200px;
+  height: 300px;
   font-size: 40px;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-.about_article4 {
+.about_article5 {
+  width: 100%;
+  height: 200px;
+  margin-top: 100px;
+  font-size: 50px;
+  font-family: ヒラギノ丸ゴ ProN;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_frame2 {
+  padding: 10px;
+  border: solid;
+}
+
+.about_s-text {
+  font-size: 30px;
+}
+
+.about_box3 {
+  text-align: left;
+  font-size: 30px;
+  width: 50%;
+}
+
+.about_article6 {
   width: 100%;
   height: 400px;
-  text-align: right;
-  vertical-align: center;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_s_text {
+  font-size: 25px;
+}
+
+.about_article7 {
+  width: 100%;
+  height: 400px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.about_article8{
+  width: 100%;
+  height: 200px;
+  margin-top: 100px;
+  font-size: 50px;
+  font-family: ヒラギノ丸ゴ ProN;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_frame3 {
+  padding: 10px;
+  border: solid;
+}
+
+.about_img {
+  width: 50%;
+  margin-left: 100px;
+}
+
+.about_box5 {
+  text-align: left;
+  font-size: 25px;
+  width: 50%;
 }

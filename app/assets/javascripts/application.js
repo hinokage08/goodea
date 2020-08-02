@@ -118,7 +118,7 @@ $(function(){
   $('.freezeframe').freezeframe();
 
   $(function() {
-    ScrollReveal().reveal('.about_text1,.about_text4',{
+    ScrollReveal().reveal('.about_article1, .about_article4',{
       delay: 700,
       distance: "100%",
       origin: "bottom",
@@ -128,7 +128,7 @@ $(function(){
   });
 
   $(function() {
-    ScrollReveal().reveal('.about_article1',{
+    ScrollReveal().reveal('.about_article2',{
       delay: 300,
       distance: "100%",
       origin: "left",
@@ -138,7 +138,7 @@ $(function(){
   });
 
   $(function() {
-    ScrollReveal().reveal('.about_text2,.about_text3',{
+    ScrollReveal().reveal('.about_article2_text,.about_text3',{
       delay: 1500,
       viewFactor: 1.0,
       distance: "100%",
@@ -148,7 +148,7 @@ $(function(){
   });
   
   $(function() {
-    ScrollReveal().reveal('.about_article2',{
+    ScrollReveal().reveal('.about_article3',{
       delay: 300,
       distance: "100%",
       origin: "right",

@@ -4,7 +4,6 @@
 ### 新機能_トレンド機能追加
 ![goodea](https://user-images.githubusercontent.com/54502466/83584388-f9e32a80-a581-11ea-93b5-b6139781924e.gif)
 Twitterのアニメ関連のトレンドをトップページにて表示する機能です。  
-（画像クリックでその作品のタグ一覧にリンクする予定です)
 
 ### 概要
 「好きなアニメ・ゲーム・漫画のグッズが欲しいなぁ…でもあまり良い感じのグッズが販売されてなくて悲しい」  
@@ -103,3 +102,7 @@ sidekiq
 redis-namespace  
 sidekiq-scheduler  
 sinatra  
+kaminari  
+kaminari-bootstrap  
+bullet  
+high_voltage  

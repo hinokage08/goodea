@@ -396,14 +396,12 @@ header {
     font-weight: bold;
   }
   .f-grid_right {
-    width: 25%;
+    min-width: 25%;
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 15%;
   }
 
-  .f-grid_right ul{
-    margin-top: 25px;
-    padding:0;
+  .f-grid_right a{
     color: white;
     font-size: 15px;
     text-decoration: underline;
@@ -412,7 +410,7 @@ header {
   .f-grid_left {
     width: 25%;
     display: inline-block;
-    margin-left: 200px;
+    margin-left: 10%;
   }
 
   .f-grid_left a{
@@ -423,6 +421,7 @@ header {
 
   .categories_list {
     height: 100px;
+    width: 600px;
     display:flex;
     flex-flow:column wrap;
     text-decoration: underline;

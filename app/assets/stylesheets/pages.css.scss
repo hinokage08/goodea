@@ -2,7 +2,7 @@
   height: 4200px;
   width: 100%;
   text-align: center;
-  font-family: ヒラギノ丸ゴ ProN;
+  font-family: 'メイリオ', 'Meiryo','ヒラギノ丸ゴ ProN', 'Hiragino Maru Gothic ProN';
 }
 
 .load-hidden {
@@ -34,7 +34,7 @@
 }
 
 .about_article_box1 {
-  width: 70%;
+  min-width: 50%;
   border-radius: 10px;
   background-color: white;
   display: flex;
@@ -58,7 +58,7 @@
 }
 
 .about_article_box2 {
-  width: 70%;
+  min-width: 50%;
   border-radius: 10px;
   background-color: white;
   display: flex;
@@ -104,6 +104,7 @@
 }
 
 .about_box3 {
+  margin-left: 5%;
   padding: 10px;
   border-radius: 10px;
   background-color: white;
@@ -134,6 +135,15 @@
   align-items: center;
   justify-content: center;
   display: flex;
+}
+
+.about_box3 {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  text-align: left;
+  font-size: 30px;
+  min-width: 40%;
 }
 
 .about_article9{

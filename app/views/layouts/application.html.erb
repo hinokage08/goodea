@@ -37,6 +37,10 @@
               <div class="header_link">
                 <%= link_to 'アイデア投稿', new_idea_path %>
               </div>
+            <% else %>
+              <div class="header_link">
+                <%= link_to 'はじめての方', page_path('about') %>
+              </div>
             <% end %>
           </div>
         </div>
@@ -108,10 +112,10 @@
     <footer>
       <div class="footer_container">
         <div class="f-grid">
-          <div class="f-grid_right">
+          <div class="f-grid_left">
             <p class="logo_p">goodea!</p>
             <ul>
-              <li>goodea!とは?</li>
+              <li><%= link_to 'goodea!とは', page_path('about') %></li>
             </ul>
           </div>
           <div class="f-grid_left">

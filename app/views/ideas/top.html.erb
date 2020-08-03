@@ -1,15 +1,15 @@
 
   <div class="main_container">
     <div class="index_container">
-    <% unless @trends.first.blank?%>
-      <div class="title_container">
-        <a>トレンド機能:Twitterで話題の作品からアイデアを探してみる？
-          <div class="l-chara">
-            (<%= @trends.first.updated_at.strftime("%m-%d %H:%M") %>更新)
-          </div>
-        </a>
-      </div>
-    <% end %>
+      <% unless @trends.first.blank?%>
+        <div class="title_container">
+          <a>トレンド機能:Twitterで話題の作品からアイデアを探してみる？
+            <div class="l-chara">
+              (<%= @trends.first.updated_at.strftime("%m-%d %H:%M") %>更新)
+            </div>
+          </a>
+        </div>
+      <% end %>
       <div class="trend_image_container trend_slide">
         <% n = 0 %>
         <div class="trend">

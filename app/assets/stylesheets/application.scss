@@ -396,9 +396,9 @@ header {
     font-weight: bold;
   }
   .f-grid_right {
-    width: 500px;
+    width: 25%;
     display: inline-block;
-    margin-left: 200px;
+    margin-left: 20%;
   }
 
   .f-grid_right ul{
@@ -410,9 +410,15 @@ header {
   }
   
   .f-grid_left {
-    vertical-align: top;
-    width: auto;
+    width: 25%;
     display: inline-block;
+    margin-left: 200px;
+  }
+
+  .f-grid_left a{
+    color: white;
+    font-size: 15px;
+    text-decoration: underline;
   }
 
   .categories_list {

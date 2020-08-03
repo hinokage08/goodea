@@ -118,41 +118,53 @@ $(function(){
   $('.freezeframe').freezeframe();
 
   $(function() {
-    ScrollReveal().reveal('.about_article1, .about_article4',{
-      delay: 700,
+    ScrollReveal().reveal('.about_article1, .about_article6, .about_article9',{
+      delay: 100,
       distance: "100%",
       origin: "bottom",
-      viewFactor: 0.9
+      viewFactor: 0.9,
+      rotate:	{ x: 0, y: 100, z: 180 }
     }
     );
   });
 
   $(function() {
     ScrollReveal().reveal('.about_article2',{
-      delay: 300,
+      delay: 100,
       distance: "100%",
       origin: "left",
       viewFactor: 0.9
     }
     );
   });
-
-  $(function() {
-    ScrollReveal().reveal('.about_article2_text,.about_text3',{
-      delay: 1500,
-      viewFactor: 1.0,
-      distance: "100%",
-      origin: "bottom",
-    }
-    );
-  });
   
   $(function() {
     ScrollReveal().reveal('.about_article3',{
-      delay: 300,
+      delay: 100,
       distance: "100%",
       origin: "right",
       viewFactor: 0.8
+    }
+    );
+  });
+
+
+  $(function() {
+    ScrollReveal().reveal('.about_article4, .about_article8, .about_article10',{
+      delay: 300,
+      distance: "100%",
+      viewFactor: 0.8,
+      origin: "top",
+      duration: 2000
+    }
+    );
+  });
+
+  $(function() {
+    ScrollReveal().reveal('.about_article5, .about_article7',{
+      delay: 200,
+      distance: "50%",
+      viewFactor: 0.8,
     }
     );
   });

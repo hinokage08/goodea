@@ -16,7 +16,6 @@ class Trend < ApplicationRecord
         }
       }
     }
-
   GRAPHQL
 
   def self.query(variables = {})

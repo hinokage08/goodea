@@ -51,7 +51,6 @@ class Trend < ApplicationRecord
           end
         end
       end
-
       unless hashtag.blank?
         hashtag_count = Hash.new(0)
         hashtag.each do |elem|

@@ -97,7 +97,6 @@ class Trend < ApplicationRecord
       end
     end
   end
-
   def self.anict_search_image(work)
     edges = query(title: work).searchWorks.edges
     edges.each_with_index do |edge, idx|

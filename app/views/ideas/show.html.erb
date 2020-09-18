@@ -22,6 +22,7 @@
     <div class="content_container">
       <%= @idea.content.html_safe %>
     </div>
+    
     <div class="favorite">
       <% if user_signed_in?%>
         <% unless @idea.user_id == current_user.id %>

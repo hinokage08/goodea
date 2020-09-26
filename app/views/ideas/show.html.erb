@@ -38,6 +38,7 @@
       <div id= "comments_area">
         <%= render partial: 'comments/index', locals:{ comments: @comments } %>
       </div>
+      
       <% if user_signed_in? %>
         <%= render partial: 'comments/form', locals: { comment: @comment, idea: @idea } %>
       <% end %>

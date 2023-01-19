@@ -87,7 +87,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.10)
     connection_pool (2.2.2)
     crass (1.0.6)
     database_cleaner (1.8.4)
@@ -149,8 +149,8 @@ GEM
     fugit (1.3.5)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.1)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
     google-api-client (0.39.2)
       addressable (~> 2.5, >= 2.5.1)
       googleauth (~> 0.9)
@@ -183,11 +183,8 @@ GEM
     http-parser (1.2.1)
       ffi-compiler (>= 1.0, < 2.0)
     http_parser.rb (0.6.0)
-    httparty (0.18.0)
-      mime-types (~> 3.0)
-      multi_xml (>= 0.5.2)
     httpclient (2.8.3)
-    i18n (1.8.2)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.10.3)
       mini_magick (>= 4.9.5, < 5)
@@ -236,12 +233,10 @@ GEM
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.14.0)
+    minitest (5.17.0)
     msgpack (1.3.3)
     multi_json (1.14.1)
-    multi_xml (0.6.0)
     multipart-post (2.1.1)
-      ffi (>= 1.9.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     naught (1.1.0)
@@ -418,7 +413,7 @@ GEM
       multipart-post (~> 2.0)
       naught (~> 1.0)
       simple_oauth (~> 0.3.0)
-    tzinfo (1.2.7)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uber (0.1.0)
     uglifier (4.2.0)
@@ -445,9 +440,6 @@ GEM
       chronic (>= 0.6.3)
     wikipedia-client (1.10.0)
     xpath (3.2.0)
-      hashie
-      httparty
-      multi_json
       nokogiri (~> 1.8)
 
 PLATFORMS
